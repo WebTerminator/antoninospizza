@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.wrapper .logo {
+  height: auto;
+  width: 300px;
+  margin-bottom: 30px;
+}
+
+.wrapper > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  margin: 0 5px;
+}
+
+.icons-wrapper {
+  display: flex;
+}
