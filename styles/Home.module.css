@@ -1,0 +1,33 @@
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .section {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 120px;
+  }
+
+  .large-text-wrapper {
+    width: 485px;
+  }
+
+  .small-text-right {
+    width: 486px;
+  }
+
+  .small-img-left {
+    width: 588px;
+  }
+
+  .small-text-left {
+    width: 486px;
+  }
+
+  .small-img-right {
+    width: 589px;
+  }
+}
