@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 36px 24px;
+  border-top: 1px solid var(--primary-black);
+}
+
+.footer img {
+  max-width: 144px;
+}
+
+.footer-social-list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.footer-social-list li:first-child {
+  margin-right: 6px;
+}

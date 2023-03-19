@@ -63,12 +63,30 @@ export default function Home() {
 
         <div>
           <div className={styles["small-text-right"]}>
-            <h3>Organic goodness on every slice</h3>
+            <h3>Bring the pizzeria to you with our ape car event</h3>
             <p>
-              Experience the delicious taste of organic ingredients in every
-              bite. We take pride in using only the freshest, highest quality
-              organic ingredients in our pizza.
+              Experience fresh, hot pizza anywhere with our mobile pizzeria!
             </p>
+            <br />
+            <ul>
+              <li>
+                <p>Authentic Italian wood-fired pizza made fresh on-site</p>
+              </li>
+              <li>
+                <p>
+                  Our signature pizza dough, fresh toppings, and homemade sauce
+                </p>
+              </li>
+              <li>
+                <p>A fun, unique and memorable experience for any occasion</p>
+              </li>
+              <li>
+                <p>Perfect for parties, corporate events, weddings, and more</p>
+              </li>
+            </ul>
+            <a className="button" href="mailto:email@example.com">
+              Book your event today!
+            </a>
           </div>
         </div>
       </section>
