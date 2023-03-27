@@ -1,6 +1,7 @@
 .footer {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   padding: 24px 24px 36px 24px;
   border-top: 1px solid var(--primary-black);
@@ -8,6 +9,11 @@
 
 .footer img {
   max-width: 144px;
+}
+
+.footer p {
+  margin: 10px 0;
+  text-align: center;
 }
 
 .footer-social-list {
@@ -18,4 +24,14 @@
 
 .footer-social-list li:first-child {
   margin-right: 6px;
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    flex-direction: row;
+  }
+
+  .footer p {
+    margin: 0;
+  }
 }

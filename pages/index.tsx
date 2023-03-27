@@ -19,7 +19,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={section}>
+      <section className={styles["section-reverse"]}>
         <div className={styles["small-img-left"]}>
           <img
             src="illustrations/Home-ingredients.png"
@@ -56,7 +56,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={section}>
+      <section className={styles["section-reverse"]}>
         <div className={styles["small-img-left"]}>
           <img src="illustrations/Home-ape.png" alt="Pizza illustration" />
         </div>

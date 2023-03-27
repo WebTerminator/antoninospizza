@@ -34,6 +34,7 @@ h2 {
 h2 + p {
   font-size: 24px;
   line-height: 32px;
+  margin-bottom: 40px;
 }
 
 h3 {
@@ -45,6 +46,7 @@ h3 {
 h3 + p {
   font-size: 16px;
   line-height: 24px;
+  margin-bottom: 20px;
 }
 
 .container {
@@ -69,6 +71,11 @@ img {
   text-decoration: none;
 }
 
+ul + .button {
+  display: block;
+  text-align: center;
+}
+
 .social {
   display: flex;
 }
@@ -79,4 +86,10 @@ img {
 
 .flex {
   display: flex;
+}
+
+@media (min-width: 1024px) {
+  ul + .button {
+    display: inline-block;
+  }
 }
