@@ -30,29 +30,40 @@ export const MobileNav = ({
 
       <ul>
         {navItems.map((item) => {
-          if (item.label === "facebook" || item.label === "instagram") {
+          if (item.label !== "facebook" && item.label !== "instagram") {
             return (
-              <li className="social" key={item.label}>
-                <Link target="_blank" href={item.link}>
-                  <img
-                    width="32"
-                    height="32"
-                    src={`icons/${item.label}.svg`}
-                    alt={`${item.label} account`}
-                  />
+              <li key={item.label}>
+                <Link
+                  onClick={() => toggleNav(false)}
+                  className={getNavItemStyle(item.link)}
+                  href={item.link}
+                >
+                  {item.label}
                 </Link>
               </li>
             );
           }
-          
-          return (
-            <li key={item.label}>
-              <Link className={getNavItemStyle(item.link)} href={item.link}>
-                {item.label}
-              </Link>
-            </li>
-          );
         })}
+
+        <li className="flex">
+          <Link className="social" target="_blank" href={navItems[4].link}>
+            <img
+              width="32"
+              height="32"
+              src={`icons/${navItems[4].label}.svg`}
+              alt={`${navItems[4].label} account`}
+            />
+          </Link>
+
+          <Link className="social" target="_blank" href={navItems[5].link}>
+            <img
+              width="32"
+              height="32"
+              src={`icons/${navItems[5].label}.svg`}
+              alt={`${navItems[5].label} account`}
+            />
+          </Link>
+        </li>
       </ul>
     </div>
   );

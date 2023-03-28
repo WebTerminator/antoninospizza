@@ -6,6 +6,10 @@
   margin-bottom: 20px;
 }
 
+.header ul {
+  margin: 0;
+}
+
 .navigation {
   display: none;
 }

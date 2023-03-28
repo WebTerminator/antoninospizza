@@ -31,6 +31,10 @@ h2 {
   margin-bottom: 28px;
 }
 
+.h2 {
+  text-align: center;
+}
+
 h2 + p {
   font-size: 24px;
   line-height: 32px;
@@ -67,9 +71,9 @@ img {
   width: 100%;
 }
 
-section img {
+/* section img {
   width: 90%;
-}
+} */
 
 .button {
   background-color: var(--primary-red);
@@ -91,6 +95,7 @@ ul + .button {
 
 .social {
   display: flex;
+  margin: 4px;
 }
 
 .social img {
@@ -120,5 +125,9 @@ ul + .button {
 
   section img {
     width: 100%;
+  }
+
+  .social {
+    margin: 0;
   }
 }
