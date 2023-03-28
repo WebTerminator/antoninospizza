@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { socilaLinks } from "@/shared/";
+import { sociaLinks } from "@/shared/";
 import styles from "@/styles/Footer.module.css";
 
 export const Footer = () => (
@@ -13,7 +13,7 @@ export const Footer = () => (
       Alessandro
     </p>
     <ul className={styles["footer-social-list"]}>
-      {socilaLinks.map((item) => (
+      {sociaLinks.map((item) => (
         <li className="social" key={item.label}>
           <Link target="_blank" href={item.link}>
             <img

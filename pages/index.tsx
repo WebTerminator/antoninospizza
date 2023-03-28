@@ -84,7 +84,7 @@ export default function Home() {
                 <p>Perfect for parties, corporate events, weddings, and more</p>
               </li>
             </ul>
-            <a className="button" href="mailto:email@example.com">
+            <a className="button" href="mailto:a.santorufo@icloud.com">
               Book your event today!
             </a>
           </div>

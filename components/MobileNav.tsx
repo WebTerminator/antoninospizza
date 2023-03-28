@@ -1,19 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
-import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import classNames from "classnames";
 
-import styles from "@/styles/Header.module.css";
-import NavItemsStyle from "@/styles/NavItems.module.css";
 import { navItems } from "@/shared/";
-import { MobileNav } from "@/components/MobileNav";
+import NavItemsStyle from "@/styles/NavItems.module.css";
 import MobileNavStyle from "@/styles/MobileNav.module.css";
 
-export const Header = () => {
-  const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
+export const MobileNav = ({
+  toggleNav,
+}: {
+  toggleNav: (value: boolean) => void;
+}) => {
   const router = useRouter();
-  const { header, navigation } = styles;
 
   const getNavItemStyle = (link: string) =>
     classNames(NavItemsStyle["nav-item"], {
@@ -21,14 +20,15 @@ export const Header = () => {
     });
 
   return (
-    <header className={header}>
-      {isMobileNavVisible && <MobileNav toggleNav={setIsMobileNavVisible} />}
+    <div className={MobileNavStyle["mobile-navigation-wrapper"]}>
+      <button
+        className={MobileNavStyle["button-icon"]}
+        onClick={() => toggleNav(false)}
+      >
+        <img src="icons/close.svg" alt="close icon" />
+      </button>
 
-      <div>
-        <img src="Logo.svg" alt="Antonino's pizza logo" />
-      </div>
-
-      <ul className={navigation}>
+      <ul>
         {navItems.map((item) => {
           if (item.label === "facebook" || item.label === "instagram") {
             return (
@@ -44,6 +44,7 @@ export const Header = () => {
               </li>
             );
           }
+          
           return (
             <li key={item.label}>
               <Link className={getNavItemStyle(item.link)} href={item.link}>
@@ -53,13 +54,6 @@ export const Header = () => {
           );
         })}
       </ul>
-
-      <button
-        className={MobileNavStyle["button-icon"]}
-        onClick={() => setIsMobileNavVisible(true)}
-      >
-        <img src="icons/hamburger.svg" alt="hamburger icon" />
-      </button>
-    </header>
+    </div>
   );
 };
