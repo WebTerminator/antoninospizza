@@ -15,16 +15,13 @@ export default function Home() {
         </div>
 
         <div>
-          <img src="illustrations/Home-pizza.png" alt="Pizza illustration" />
+          <img src="imgs/Home-pizza.png" alt="Pizza illustration" />
         </div>
       </section>
 
       <section className={styles["section-reverse"]}>
         <div className={styles["small-img-left"]}>
-          <img
-            src="illustrations/Home-ingredients.png"
-            alt="Pizza illustration"
-          />
+          <img src="imgs/Home-ingredients.png" alt="Pizza illustration" />
         </div>
 
         <div>
@@ -52,13 +49,13 @@ export default function Home() {
         </div>
 
         <div className={styles["small-img-right"]}>
-          <img src="illustrations/Home-flour.png" alt="Pizza illustration" />
+          <img src="imgs/Home-flour.png" alt="Pizza illustration" />
         </div>
       </section>
 
       <section className={styles["section-reverse"]}>
         <div className={styles["small-img-left"]}>
-          <img src="illustrations/Home-ape.png" alt="Pizza illustration" />
+          <img src="imgs/Home-ape.png" alt="Pizza illustration" />
         </div>
 
         <div>

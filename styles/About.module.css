@@ -4,44 +4,8 @@
   padding-bottom: 64px;
 }
 
-.section {
-  position: relative;
-}
-
-.section + p {
-  padding: 36px 25px 42px 25px;
-}
-
-.header-br,
-.header-tl {
-  display: none;
-  position: absolute;
-  z-index: -1;
-  max-width: 200px;
-}
-
-.header-tl {
-  top: -122px;
-  left: -113px;
-}
-
-.header-br {
-  bottom: -51px;
-  right: -100px;
-}
-
 .img-wrapper {
   max-width: 446px;
   margin: 0 auto;
 }
 
-.p {
-  margin: 24px 0;
-}
-
-@media (min-width: 1024px) {
-  .header-br,
-  .header-tl {
-    display: block;
-  }
-}

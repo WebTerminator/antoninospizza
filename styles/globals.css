@@ -72,10 +72,6 @@ img {
   width: 100%;
 }
 
-/* section img {
-  width: 90%;
-} */
-
 .button {
   background-color: var(--primary-red);
   color: #fff;

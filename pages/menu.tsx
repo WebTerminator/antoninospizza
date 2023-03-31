@@ -1,9 +1,47 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "@/styles/Menu.module.css";
 import { Menu as MenuUI } from "@/components/Menu";
-import { PizzasMenu, PanuozzosMenu, StartersMenu } from "@/shared";
+import {
+  BimbiMenu,
+  ClassiciMenu,
+  DessertMenu,
+  PizzasMenu,
+  PanuozzosMenu,
+  StartersMenu,
+} from "@/shared";
 
 export default function Menu() {
+  const menus = [
+    {
+      list: PizzasMenu,
+      title: "Pizza",
+      imgName: "pizza",
+    },
+    {
+      list: PanuozzosMenu,
+      title: "Panuozzo",
+      imgName: "panuozzo",
+    },
+    {
+      list: StartersMenu,
+      title: "Starters",
+      imgName: "starter",
+    },
+    {
+      list: ClassiciMenu,
+      title: "Classici",
+      imgName: "tomatoes",
+    },
+    {
+      list: BimbiMenu,
+      title: "Bimbi",
+    },
+    {
+      list: DessertMenu,
+      title: "Dessert",
+    },
+  ];
+
   return (
     <>
       <div className={styles["header-container"]}>
@@ -18,38 +56,22 @@ export default function Menu() {
         </p>
       </div>
 
-      <div className={styles["main-container"]}>
-        <MenuUI
-          menuTitle="Pizza"
-          menuItems={PizzasMenu}
-          img={{
-            src: "illustrations/menu/pizza.png",
-            alt: "pizza illustration",
-          }}
-        />
-      </div>
-
-      <div className={styles["main-container"]}>
-        <MenuUI
-          menuTitle="Panuozzo"
-          menuItems={PanuozzosMenu}
-          img={{
-            src: "illustrations/menu/panuozzo.png",
-            alt: "panuozzo illustration",
-          }}
-        />
-      </div>
-
-      <div className={styles["main-container"]}>
-        <MenuUI
-          menuTitle="Starters"
-          menuItems={StartersMenu}
-          img={{
-            src: "illustrations/menu/starter.png",
-            alt: "starters illustration",
-          }}
-        />
-      </div>
+      {menus.map((menu) => (
+        <div key={menu.title} className={styles["main-container"]}>
+          <MenuUI
+            menuTitle={menu.title}
+            menuItems={menu.list}
+            img={
+              menu.imgName
+                ? {
+                    src: `imgs/menu/${menu?.imgName}.png`,
+                    alt: `${menu?.imgName} illustration`,
+                  }
+                : undefined
+            }
+          />
+        </div>
+      ))}
     </>
   );
 }

@@ -135,3 +135,43 @@ export const StartersMenu = [
     description: "Add on £ 1.00 - Parmesan shaves",
   },
 ];
+
+export const ClassiciMenu = [
+  {
+    title: "Aubergine Parmigiana",
+    subTitle: "(V)",
+    price: "7.50",
+    description:
+      "Fried aubergine, fior di latte mozzarella. San Marzano tomato sauce, parmesan and fresh basil.",
+  },
+  {
+    title: "Chicken Cotoletta served with rosemary chips",
+    price: "8.50",
+    description:
+      "Breaded chicken escalope served with rosemary, chips and mixed leaves salad.",
+  },
+];
+
+export const BimbiMenu = [
+  {
+    title: "Margherita",
+    price: "13.00",
+    description:
+      "San Marzano tomato sauce, oregano, fresh garlic, capers, taggiasce pitted olives fresh basil and EVO oil",
+    subList: ["Add one of your favourite toppings", "Served with chips"],
+  },
+];
+
+export const DessertMenu = [
+  {
+    title: "Home made Tiramasu",
+    price: "4.00",
+    description:
+      "Savoiardi biscuits, coffee, whipped mixture of eggs, sugar and mascarpone cheese, flavoured with cocoa",
+  },
+  {
+    title: "Pizza alla Nuteela",
+    price: "6.50",
+    description: "Mini folded pizza, stuffed with Nutella.",
+  },
+];

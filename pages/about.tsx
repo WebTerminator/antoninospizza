@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "@/styles/About.module.css";
+import { MultiImg } from "@/components/MultiImg";
 
 export default function About() {
   return (
@@ -7,31 +8,27 @@ export default function About() {
       <h2 className="h2">About page</h2>
 
       <section className={styles["section"]}>
-        <div className={styles["header-tl"]}>
-          <img
-            src="illustrations/about/header-tl.png"
-            alt="tomato illustration"
-          />
-        </div>
-
-        <img src="illustrations/about/header.png" alt="ape car display" />
-
-        <div className={styles["header-br"]}>
-          <img
-            src="illustrations/about/header-br.png"
-            alt="olives illustration"
-          />
-        </div>
+        <MultiImg
+          topLeftImg={{
+            src: "about/header-tl",
+            alt: "tomato illustration",
+          }}
+          mainImg={{
+            src: "about/header",
+            alt: "ape car display",
+          }}
+          bottomRightImg={{
+            src: "about/header-br",
+            alt: "olives illustration",
+          }}
+          text={[
+            "Antonino’s Pizza bring you the authentic taste of Neapolitan sourdough pizza served from their beautiful 1988 vintage Piaggio. Their lovely van would be an amazing addition to almost any event and the pizza that they serve from it matches how good it looks.",
+          ]}
+        />
       </section>
-      <p>
-        Antonino’s Pizza bring you the authentic taste of Neapolitan sourdough
-        pizza served from their beautiful 1988 vintage Piaggio. Their lovely van
-        would be an amazing addition to almost any event and the pizza that they
-        serve from it matches how good it looks.
-      </p>
 
       <div className={styles["img-wrapper"]}>
-        <img src="illustrations/about/oven.png" alt="oven illustration" />
+        <img src="imgs/about/oven.png" alt="oven illustration" />
       </div>
 
       <p className={styles["p"]}>
@@ -49,7 +46,7 @@ export default function About() {
       </p>
 
       <div className={styles["img-wrapper"]}>
-        <img src="illustrations/about/flour.png" alt="flour illustration" />
+        <img src="imgs/about/flour.png" alt="flour illustration" />
       </div>
 
       <p className={styles["p"]}>
