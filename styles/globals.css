@@ -27,7 +27,7 @@ ul {
 
 h2 {
   font-weight: 600;
-  font-size: 48px;
+  font-size: 36px;
   line-height: 1.33;
   margin-bottom: 28px;
 }
@@ -37,15 +37,19 @@ h2 {
 }
 
 h2 + p {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 32px;
   margin-bottom: 40px;
 }
 
 h3 {
-  font-size: 36px;
+  font-size: 30px;
   margin-bottom: 18px;
   font-weight: 600;
+}
+
+ul p {
+  margin: 0;
 }
 
 h3 + p {
@@ -54,8 +58,25 @@ h3 + p {
   margin-bottom: 20px;
 }
 
+p {
+  margin-bottom: 20px;
+}
+
 a {
   color: var(--primary-black);
+}
+
+.container-small {
+  max-width: 638px;
+  margin: 0 auto;
+  padding-bottom: 64px;
+}
+
+.container-small .button {
+  display: block;
+  margin: 40px auto 0;
+  width: 200px;
+  text-align: center;
 }
 
 .container {
@@ -114,5 +135,17 @@ ul + .button {
 
   .social {
     margin: 0;
+  }
+
+  h2 {
+    font-size: 48px;
+  }
+
+  h2 + p {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 36px;
   }
 }

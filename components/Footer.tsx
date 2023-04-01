@@ -9,8 +9,9 @@ export const Footer = () => (
       <img src="Logo.svg" alt="Antonino's pizza logo" />
     </div>
     <p>
-      © Antonino’s. All rights reserved. | Design by Nicola Piedimonte - Dev by
-      Alessandro
+      © Antonino’s. All rights reserved. | Design by Nicola Piedimonte -
+      Development by
+      <a href="https://www.linkedin.com/in/as-web/">  Alessandro Santese</a>
     </p>
     <ul className={styles["footer-social-list"]}>
       {sociaLinks.map((item) => (

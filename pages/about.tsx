@@ -4,7 +4,7 @@ import { MultiImg } from "@/components/MultiImg";
 
 export default function About() {
   return (
-    <div className={styles["container"]}>
+    <div className="container-small">
       <h2 className="h2">About page</h2>
 
       <section className={styles["section"]}>
@@ -31,7 +31,7 @@ export default function About() {
         <img src="imgs/about/oven.png" alt="oven illustration" />
       </div>
 
-      <p className={styles["p"]}>
+      <p>
         At Antonino’s, we are passionate about bringing the authentic taste of
         Naples to Sutton, UK. Our restaurant is inspired by the vibrant culinary
         traditions of Naples, Italy, and we take great pride in using only the

@@ -38,7 +38,7 @@
   background-color: var(--primary-red);
 }
 
-.menu-header p {
+.menu-header span {
   color: #fff;
   font-size: 14px;
   font-weight: bold;

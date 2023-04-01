@@ -3,7 +3,7 @@ import styles from "@/styles/Contact.module.css";
 
 export default function ContactUs() {
   return (
-    <div className={styles["container"]}>
+    <div className="container-small">
       <h2 className="h2">Get in touch</h2>
 
       <MultiImg
@@ -25,7 +25,11 @@ export default function ContactUs() {
         ]}
       />
 
-      <a className="button" href="mailto:a.santorufo@icloud.com">
+      <a
+        style={{ marginLeft: "25px" }}
+        className="button"
+        href="mailto:a.santorufo@icloud.com"
+      >
         Contact us
       </a>
     </div>

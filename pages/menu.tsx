@@ -56,9 +56,10 @@ export default function Menu() {
         </p>
       </div>
 
-      {menus.map((menu) => (
-        <div key={menu.title} className={styles["main-container"]}>
+      <div className={styles["main-container"]}>
+        {menus.map((menu) => (
           <MenuUI
+            key={menu.title}
             menuTitle={menu.title}
             menuItems={menu.list}
             img={
@@ -70,8 +71,8 @@ export default function Menu() {
                 : undefined
             }
           />
-        </div>
-      ))}
+        ))}
+      </div>
     </>
   );
 }

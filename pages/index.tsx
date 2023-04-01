@@ -64,7 +64,7 @@ export default function Home() {
             <p>
               Experience fresh, hot pizza anywhere with our mobile pizzeria!
             </p>
-            <br />
+
             <ul>
               <li>
                 <p>Authentic Italian wood-fired pizza made fresh on-site</p>

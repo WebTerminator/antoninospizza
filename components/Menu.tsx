@@ -24,8 +24,8 @@ export const Menu = ({ menuItems, menuTitle, img }: MenuProps) => (
     <h3>{menuTitle}</h3>
     <div className={styles["menu"]}>
       <div className={styles["menu-header"]}>
-        <p>Name</p>
-        <p>Price</p>
+        <span>Name</span>
+        <span>Price</span>
       </div>
       <ul>
         {menuItems.map((item) => (
