@@ -1,0 +1,11 @@
+.itemActive {
+  font-weight: bold;
+}
+
+.nav-item {
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 1.5;
+  color: var(--primary-black);
+  text-align: left;
+}

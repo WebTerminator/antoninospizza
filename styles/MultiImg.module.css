@@ -1,0 +1,33 @@
+.section {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.section ~ p {
+  padding: 0 25px;
+}
+
+.header-br,
+.header-tl {
+  display: none;
+  position: absolute;
+  z-index: -1;
+  max-width: 200px;
+}
+
+.header-tl {
+  top: -122px;
+  left: -113px;
+}
+
+.header-br {
+  bottom: -51px;
+  right: -130px;
+}
+
+@media (min-width: 1024px) {
+  .header-br,
+  .header-tl {
+    display: block;
+  }
+}

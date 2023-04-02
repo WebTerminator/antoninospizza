@@ -1,0 +1,41 @@
+.mobile-navigation-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.mobile-navigation-wrapper ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.mobile-navigation-wrapper .button-icon {
+  display: block;
+  position: absolute;
+  top: 48px;
+  right: 24px;
+}
+
+.button-icon {
+  cursor: pointer;
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  width: 24px;
+  height: 24px;
+}
+
+@media (min-width: 1024px) {
+  ul + .button {
+    display: inline-block;
+  }
+}

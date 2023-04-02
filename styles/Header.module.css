@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  margin-bottom: 20px;
+}
+
+.header ul {
+  margin: 0;
+}
+
+.navigation {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .navigation {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+
+  .navigation + button {
+    display: none;
+  }
+}
+
+.navigation li {
+  padding: 0 10px;
+}
+
+.navigation li:last-child {
+  padding-right: 0;
+}
+
+.navigation a:hover {
+  text-decoration: underline;
+}
