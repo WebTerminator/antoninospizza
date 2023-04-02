@@ -66,6 +66,10 @@ a {
   color: var(--primary-black);
 }
 
+.logo-wrapper {
+  max-width: 80%;
+}
+
 .container-small {
   max-width: 638px;
   margin: 0 auto;
@@ -147,5 +151,9 @@ ul + .button {
 
   h3 {
     font-size: 36px;
+  }
+
+  .logo-wrapper {
+    max-width: 100%;
   }
 }

@@ -4,7 +4,6 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export default function App({ Component, pageProps }: AppProps) {
-  console.log("pageProps: ", pageProps);
   return (
     <div className="container">
       <Header />

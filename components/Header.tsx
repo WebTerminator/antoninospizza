@@ -24,7 +24,7 @@ export const Header = () => {
     <header className={header}>
       {isMobileNavVisible && <MobileNav toggleNav={setIsMobileNavVisible} />}
 
-      <div>
+      <div className="logo-wrapper">
         <img src="Logo.svg" alt="Antonino's pizza logo" />
       </div>
 
