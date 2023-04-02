@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { NextSeo } from "next-seo";
 import styles from "@/styles/Menu.module.css";
 import { Menu as MenuUI } from "@/components/Menu";
 import {
@@ -44,6 +45,7 @@ export default function Menu() {
 
   return (
     <>
+      <NextSeo title="Menu" />
       <div className={styles["header-container"]}>
         <h2 className="h2">
           Experience the authentic taste of Naples at Antonino’s
