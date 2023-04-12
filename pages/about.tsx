@@ -34,13 +34,13 @@ export default function About() {
           <img src="imgs/about/oven.png" alt="oven illustration" />
         </div>
 
-        <p>
+        <p className={styles["p"]}>
           At Antonino’s, we are passionate about bringing the authentic taste of
           Naples to Sutton, UK. Our restaurant is inspired by the vibrant
           culinary traditions of Naples, Italy, and we take great pride in using
           only the finest and freshest ingredients in all of our dishes.
         </p>
-        <p>
+        <p className={styles["p"]}>
           Our story began with a love for Napolitan cuisine and a desire to
           share it with the world. After years of perfecting our pizza-making
           techniques and sourcing the best ingredients, we opened our doors in
@@ -59,7 +59,7 @@ export default function About() {
           offer a selection of salads, antipasti, and desserts.
         </p>
 
-        <p>
+        <p className={styles["p"]}>
           But our commitment to quality goes beyond our ingredients. We believe
           that a great dining experience is about more than just the food;
           it&apos;s about the atmosphere, the service, and the overall
