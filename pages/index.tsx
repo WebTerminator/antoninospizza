@@ -10,6 +10,17 @@ export default function Home() {
       <NextSeo
         title="Home"
         description="A Sutton based Napoletan pizza with other authentic Italian classic food."
+        openGraph={{
+          title: "Home",
+          description:
+            "A Sutton based Napoletan pizza with other authentic Italian classic food.",
+          images: [
+            {
+              url: "https://www.antoninospizza.co.uk/imgs/contact/us.png",
+              alt: "Antonino's Pizza",
+            },
+          ],
+        }}
       />
       <div>
         <section className={section}>
