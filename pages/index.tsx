@@ -13,7 +13,7 @@ export default function Home() {
         openGraph={{
           type: "website",
           url: "https://www.antoninospizza.co.uk/",
-          title: "Antonino's Pizza home page",
+          title: "Antonino's Pizza",
           description:
             "A Sutton based Napoletan pizza with other authentic Italian classic food.",
           images: [
