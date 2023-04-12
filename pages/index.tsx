@@ -7,7 +7,10 @@ export default function Home() {
 
   return (
     <>
-      <NextSeo title="Home" />
+      <NextSeo
+        title="Home"
+        description="A Sutton based Napoletan pizza with other authentic Italian classic food."
+      />
       <div>
         <section className={section}>
           <div>
