@@ -11,6 +11,8 @@ export default function Home() {
         title="Home"
         description="A Sutton based Napoletan pizza with other authentic Italian classic food."
         openGraph={{
+          type: "website",
+          url: "https://www.antoninospizza.co.uk/",
           title: "Home",
           description:
             "A Sutton based Napoletan pizza with other authentic Italian classic food.",
