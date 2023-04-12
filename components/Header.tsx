@@ -14,18 +14,21 @@ export const Header = () => {
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
   const router = useRouter();
   const { header, navigation } = styles;
+  const isHomePath = router.pathname === "/";
 
   const getNavItemStyle = (link: string) =>
     classNames(NavItemsStyle["nav-item"], {
       [NavItemsStyle["itemActive"]]: router.pathname === link,
     });
 
+  const logo = <img src="Logo.svg" alt="Antonino's pizza logo" />;
+
   return (
     <header className={header}>
       {isMobileNavVisible && <MobileNav toggleNav={setIsMobileNavVisible} />}
 
       <div className="logo-wrapper">
-        <img src="Logo.svg" alt="Antonino's pizza logo" />
+        {isHomePath ? logo : <Link href="/">{logo}</Link>}
       </div>
 
       <ul className={navigation}>
