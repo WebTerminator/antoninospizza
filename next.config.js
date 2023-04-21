@@ -5,12 +5,4 @@ const nextConfig = {
 
 module.exports = {
   ...nextConfig,
-  async rewrites() {
-    return [
-      {
-        source: "/sitemap.xml",
-        destination: "/api/sitemap",
-      },
-    ];
-  },
 };
