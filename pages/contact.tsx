@@ -4,7 +4,10 @@ import { MultiImg } from "@/components/MultiImg";
 export default function ContactUs() {
   return (
     <>
-      <NextSeo title="Contact us" />
+      <NextSeo
+        title="Contact us"
+        canonical="https://www.antoninospizza.co.uk/contact"
+      />
       <div className="container-small">
         <h2 className="h2">Get in touch</h2>
 

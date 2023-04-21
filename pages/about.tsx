@@ -6,7 +6,10 @@ import { MultiImg } from "@/components/MultiImg";
 export default function About() {
   return (
     <>
-      <NextSeo title="About Us" />
+      <NextSeo
+        title="About Us"
+        canonical="https://www.antoninospizza.co.uk/about"
+      />
       <div className="container-small">
         <h2 className="h2">About page</h2>
 

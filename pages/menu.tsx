@@ -45,7 +45,7 @@ export default function Menu() {
 
   return (
     <>
-      <NextSeo title="Menu" />
+      <NextSeo title="Menu" canonical="https://www.antoninospizza.co.uk/menu" />
       <div className={styles["header-container"]}>
         <h2 className="h2">
           Experience the authentic taste of Naples at Antonino’s
