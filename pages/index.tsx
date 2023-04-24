@@ -1,10 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { NextSeo } from "next-seo";
 import styles from "@/styles/Home.module.css";
+import { getProducts } from "../utils/shopify";
 
-export default function Home() {
+export default function Home(props: any) {
   const { section } = styles as any;
-
+  console.log(props);
   return (
     <>
       <NextSeo
@@ -114,3 +115,11 @@ export default function Home() {
     </>
   );
 }
+
+Home.getInitialProps = async function () {
+  let data = await getProducts();
+
+  return {
+    props: data,
+  };
+};
