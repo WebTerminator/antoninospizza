@@ -15,6 +15,11 @@ const getAllProductsQuery = gql`
         node {
           id
           title
+          description
+          featuredImage {
+            altText
+            url
+          }
         }
       }
     }

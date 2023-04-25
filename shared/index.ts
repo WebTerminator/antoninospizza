@@ -11,6 +11,10 @@ export const navItems = [
   { label: "About us", link: "/about" },
   { label: "Menu", link: "/menu" },
   { label: "Contact us", link: "/contact" },
+  {
+    label: "Shop",
+    link: "/shop",
+  },
   ...sociaLinks,
 ];
 
