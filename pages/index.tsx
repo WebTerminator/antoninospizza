@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <NextSeo
-        title="Home"
+        title="Home - Antonino's Pizza"
         description="A Sutton based Napoletan pizza with other authentic Italian classic food."
         canonical="https://www.antoninospizza.co.uk/"
         openGraph={{

@@ -5,7 +5,7 @@ export default function ContactUs() {
   return (
     <>
       <NextSeo
-        title="Contact us"
+        title="Contact us - Antonino's Pizza"
         canonical="https://www.antoninospizza.co.uk/contact"
       />
       <div className="container-small">

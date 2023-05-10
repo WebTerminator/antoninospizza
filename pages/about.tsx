@@ -7,7 +7,7 @@ export default function About() {
   return (
     <>
       <NextSeo
-        title="About Us"
+        title="About Us - Antonino's Pizza"
         canonical="https://www.antoninospizza.co.uk/about"
       />
       <div className="container-small">
