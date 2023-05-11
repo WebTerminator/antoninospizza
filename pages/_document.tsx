@@ -18,6 +18,7 @@ export default function Document() {
           name="google-site-verification"
           content="xnCTjBzcNQUfZOYPXTxd5EbbCAuwVwoFlkihB73lffQ"
         />
+        <link rel="icon" href="favicon.ico" />
       </Head>
       <body>
         <Main />
