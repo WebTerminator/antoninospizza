@@ -3,7 +3,7 @@ export const sociaLinks = [
     label: "facebook",
     link: "https://www.facebook.com/Antoninospizzaofficial",
   },
-  { label: "instagram", link: "https://www.instagram.com/antonino_pizza/" },
+  { label: "instagram", link: "https://www.instagram.com/antoninospizzauk/" },
 ];
 
 export const navItems = [
