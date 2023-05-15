@@ -6,12 +6,12 @@ import styles from "@/styles/Footer.module.css";
 export const Footer = () => (
   <footer className={styles.footer}>
     <div className="flex">
-      <img src="Logo.svg" alt="Antonino's pizza logo" />
+      <img src="Logo.svg" alt="Logo" />
     </div>
     <p>
       © Antonino’s. All rights reserved. | Design by Nicola Piedimonte -
       Development by
-      <a href="https://www.linkedin.com/in/as-web/">  Alessandro Santese</a>
+      <a href="https://www.linkedin.com/in/as-web/"> Alessandro Santese</a>
     </p>
     <ul className={styles["footer-social-list"]}>
       {sociaLinks.map((item) => (
