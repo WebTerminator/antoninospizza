@@ -30,7 +30,7 @@ export default function ContactUs() {
           ]}
         />
 
-        <p>You can find us at the following location:</p>
+        <p>You can find us at the following locations:</p>
 
         <ul>
           <li>
