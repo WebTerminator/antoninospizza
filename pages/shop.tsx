@@ -1,20 +1,27 @@
 /* eslint-disable @next/next/no-img-element */
 import { NextSeo } from "next-seo";
-import styles from "@/styles/Home.module.css";
+import styles from "@/styles/Shop.module.css";
 import { getProducts } from "../utils/shopify";
+import { handleAddToCart } from "../utils/shopify";
 
 function Shop(props: any) {
-  console.log(props);
-  console.log(props);
   return (
     <div className="flex">
       {props.products.edges.map((product: any) => {
+        console.log(product);
         return (
-          <div key={product.node.id}>
+          <div className={styles["product-wrapper"]} key={product.node.id}>
             <div className={styles.container}>
               <h1>{product.node.title}</h1>
-              <img src={product.node.featuredImage.url} alt="pizza" />
+              <img src={product.node.featuredImage?.url} alt="pizza" />
               <p>{product.node.description}</p>
+              <button
+                onClick={() =>
+                  handleAddToCart("1", product.node.variants.edges[0].node.id)
+                }
+              >
+                add to cart
+              </button>
             </div>
           </div>
         );
@@ -25,7 +32,7 @@ function Shop(props: any) {
 
 export async function getServerSideProps() {
   let data = await getProducts();
-
+  console.log(data);
   return {
     props: data,
   };

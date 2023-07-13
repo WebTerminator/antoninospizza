@@ -1,0 +1,15 @@
+.product-wrapper {
+  padding: 20px;
+}
+
+.product-wrapper img {
+  width: 50%;
+  margin: 10px 0;
+}
+
+.product-wrapper button {
+  padding: 10px;
+  background-color: white;
+  border: 1px solid grey;
+  cursor: pointer;
+}

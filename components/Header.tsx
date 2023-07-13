@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import classNames from "classnames";
@@ -9,12 +9,30 @@ import NavItemsStyle from "@/styles/NavItems.module.css";
 import { navItems } from "@/shared/";
 import { MobileNav } from "@/components/MobileNav";
 import MobileNavStyle from "@/styles/MobileNav.module.css";
+import { retrieveCart } from "../utils/shopify";
 
 export const Header = () => {
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
   const router = useRouter();
   const { header, navigation } = styles;
   const isHomePath = router.pathname === "/";
+
+  useEffect(() => {
+    let cartId: any;
+
+    if (typeof window !== "undefined") {
+      cartId = sessionStorage.getItem("cartId");
+    }
+
+    const loadCart = async () => {
+      if (cartId) {
+        const cart = await retrieveCart(cartId);
+        console.log(cart);
+      }
+    };
+
+    loadCart();
+  }, []);
 
   const getNavItemStyle = (link: string) =>
     classNames(NavItemsStyle["nav-item"], {
