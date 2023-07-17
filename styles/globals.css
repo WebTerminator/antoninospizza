@@ -48,6 +48,11 @@ h3 {
   font-weight: 600;
 }
 
+label {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
 ul p {
   margin: 0;
 }
@@ -128,6 +133,33 @@ ul + .button {
   display: flex;
 }
 
+.flex-1 {
+  flex: 1;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin: 0 5px 20px 5px;
+}
+
+input,
+select {
+  appearance: none;
+  border: 1px solid #ccc;
+  padding: 10px 6px;
+  border-radius: 6px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (min-width: 1024px) {
   ul + .button {
     display: inline-block;
@@ -155,5 +187,10 @@ ul + .button {
 
   .logo-wrapper {
     max-width: 100%;
+  }
+
+  .flex-row {
+    display: flex;
+    flex-direction: row;
   }
 }
