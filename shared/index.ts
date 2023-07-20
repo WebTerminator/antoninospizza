@@ -188,5 +188,6 @@ export type FormValues = {
   guests: number;
   eventDate: string;
   servingTime: string;
+  additionalInfo?: string;
 };
 

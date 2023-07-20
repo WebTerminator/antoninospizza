@@ -1,8 +1,10 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { FormField } from "./FormField";
-import { type FormValues } from "@/shared/";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+import { InputFormField } from "./InputFormField";
+import { SelectFormField } from "./SelectFormField";
+import { type FormValues } from "@/shared/";
 
 export const EventsForm = () => {
   const { register, handleSubmit, reset } = useForm<FormValues>();
@@ -33,95 +35,122 @@ export const EventsForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="flex">
-        <FormField
-          register={register}
-          label="First Name"
-          name="firstName"
-          id="firstName"
-        />
-
-        <FormField
-          register={register}
-          label="Last Name"
-          name="lastName"
-          id="lastName"
-        />
-      </div>
-
-      <div className="flex-row">
-        <FormField
-          register={register}
-          label="Company"
-          name="company"
-          id="company"
-        />
-
-        <FormField
-          register={register}
-          label="Email"
-          name="email"
-          id="email"
-          type="email"
-        />
-
-        <FormField
-          register={register}
-          label="Phone"
-          name="phone"
-          id="phone"
-          type="tel"
-        />
-      </div>
-
-      <div className="flex-row">
-        <FormField
-          register={register}
-          label="Postcode"
-          name="postcode"
-          id="postcode"
-        />
-
-        <div className="form-field flex-3">
-          <label htmlFor="message">Event type</label>
-          <select
-            required
-            {...register("eventType", {
-              required: true,
-            })}
-          >
-            <option value="">Select...</option>
-            <option value="wedding">wedding</option>
-            <option value="birthday">birthday</option>
-            <option value="corporate">corporate</option>
-          </select>
+        <div className="flex-1">
+          <InputFormField
+            register={register}
+            label="First Name"
+            name="firstName"
+            id="firstName"
+          />
         </div>
 
-        <FormField
-          register={register}
-          label="Number of guests"
-          name="guests"
-          id="guests"
-          type="number"
-          size="small"
-        />
+        <div className="flex-1">
+          <InputFormField
+            register={register}
+            label="Last Name"
+            name="lastName"
+            id="lastName"
+          />
+        </div>
       </div>
 
       <div className="flex-row">
-        <FormField
-          register={register}
-          label="Date of event"
-          name="eventDate"
-          id="eventDate"
-          type="date"
-        />
+        <div className="flex-1">
+          <InputFormField
+            register={register}
+            label="Company"
+            name="company"
+            id="company"
+          />
+        </div>
+        <div className="flex-1">
+          <InputFormField
+            register={register}
+            label="Email"
+            name="email"
+            id="email"
+            type="email"
+          />
+        </div>
+        <div className="flex-1">
+          <InputFormField
+            register={register}
+            label="Phone"
+            name="phone"
+            id="phone"
+            type="tel"
+          />
+        </div>
+      </div>
 
-        <FormField
-          register={register}
-          label="Serving time"
-          name="servingTime"
-          id="servingTime"
-          type="time"
-        />
+      <div className="flex-row">
+        <div className="flex-3">
+          <InputFormField
+            register={register}
+            label="Postcode"
+            name="postcode"
+            id="postcode"
+          />
+        </div>
+
+        <div className="flex-3">
+          <SelectFormField
+            register={register}
+            label="Event type"
+            name="eventType"
+            id="eventType"
+            options={[
+              { label: "wedding", value: "wedding" },
+              { label: "birthday", value: "birthday" },
+              { label: "corporate", value: "corporate" },
+              { label: "other", value: "other" },
+            ]}
+          />
+        </div>
+
+        <div className="flex-1">
+          <InputFormField
+            register={register}
+            label="Number of guests"
+            name="guests"
+            id="guests"
+            type="number"
+            size="small"
+          />
+        </div>
+      </div>
+
+      <div className="flex-row">
+        <div className="flex-1">
+          <InputFormField
+            register={register}
+            label="Date of event"
+            name="eventDate"
+            id="eventDate"
+            type="date"
+          />
+        </div>
+
+        <div className="flex-1">
+          <InputFormField
+            register={register}
+            label="Serving time"
+            name="servingTime"
+            id="servingTime"
+            type="time"
+          />
+        </div>
+      </div>
+      <div className="flex-row">
+        <div className="flex-1">
+          <InputFormField
+            register={register}
+            label="Additional information"
+            name="additionalInfo"
+            id="additionalInfo"
+            type="textarea"
+          />
+        </div>
       </div>
 
       <button className="button" type="submit" value="Submit">
