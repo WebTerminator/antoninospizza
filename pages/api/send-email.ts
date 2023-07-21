@@ -26,9 +26,10 @@ export default async function handler(
       guests,
       servingTime,
       eventDate,
+      additionalInfo,
     } = req.body as FormValues;
 
-    const msg = `First Name: ${firstName}\r\n Last Name: ${lastName}\r\n Company: ${company}\r\n Email: ${email}\r\n Phone: ${phone}\r\n Postcode: ${postcode}\r\n Event Type: ${eventType}\r\n Guests: ${guests}\r\n Serving Time: ${servingTime}\r\n Event Date: ${eventDate}`;
+    const msg = `First Name: ${firstName}\r\n Last Name: ${lastName}\r\n Company: ${company}\r\n Email: ${email}\r\n Phone: ${phone}\r\n Postcode: ${postcode}\r\n Event Type: ${eventType}\r\n Guests: ${guests}\r\n Serving Time: ${servingTime}\r\n Event Date: ${eventDate}\r\n Additional Info: ${additionalInfo}`;
 
     const data = {
       to: process.env.EMAIL_ADDRESS,

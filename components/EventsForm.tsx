@@ -128,6 +128,7 @@ export const EventsForm = () => {
             name="eventDate"
             id="eventDate"
             type="date"
+            min={new Date().toISOString().split("T")[0]}
           />
         </div>
 
