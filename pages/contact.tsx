@@ -42,7 +42,7 @@ export default function ContactUs() {
             </a>
           </li>
           <li>
-            Sat 10-16,{" "}
+            Sat 10AM-16PM,{" "}
             <a
               target="_blank"
               href="https://www.google.com/maps/place/Duke+of+York+Square/@51.4914214,-0.1598008,15z/data=!4m6!3m5!1s0x48760515cdacfafb:0x2f07d2140f8c5c83!8m2!3d51.4914214!4d-0.1598008!16s%2Fg%2F1hc4pg4sb?entry=ttu"
@@ -51,6 +51,11 @@ export default function ContactUs() {
             </a>
           </li>
         </ul>
+
+        <p>
+          or you can gives us a call on:{" "}
+          <a href="tel:+4733378901">+44 7476 110747</a>
+        </p>
 
         <a
           style={{ marginLeft: "25px" }}
