@@ -151,6 +151,25 @@ export async function retrieveCart(cartId: string) {
   }
 }
 
+export const getMetaobjects = async () => {
+  const getMetaobjectsQuery = gql`
+    query MyQuery {
+      metaobjects(type: "menu_list", first: 10) {
+        nodes {
+          field(key: "menu_list") {
+            value
+          }
+        }
+      }
+    }
+  `;
+  try {
+    return await graphQLClient.request(getMetaobjectsQuery);
+  } catch (error: any) {
+    throw new Error(error);
+  }
+};
+
 //get checkout url
 export const getCheckoutUrl = async (cartId: string) => {
   const getCheckoutUrlQuery = gql`

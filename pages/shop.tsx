@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { NextSeo } from "next-seo";
 import styles from "@/styles/Shop.module.css";
-import { getProducts } from "../utils/shopify";
+import { getMetaobjects, getProducts } from "../utils/shopify";
 import { handleAddToCart } from "../utils/shopify";
 
 function Shop(props: any) {
@@ -32,7 +32,8 @@ function Shop(props: any) {
 
 export async function getServerSideProps() {
   let data = await getProducts();
-  console.log(data);
+  const m: any = await getMetaobjects();
+  console.log(m.metaobjects.nodes[0].field.value);
   return {
     props: data,
   };
