@@ -13,8 +13,6 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   if (req.method === "POST") {
-    console.log(req.body);
-
     const {
       firstName,
       lastName,
@@ -39,10 +37,13 @@ export default async function handler(
       html: msg.replace(/\r\n/g, "<br>"),
     };
 
+    console.log(data);
+
     try {
       await sgMail.send(data);
       res.status(200).json({ message: "Your message was sent successfully." });
     } catch (err) {
+      console.log(JSON.stringify(err));
       res
         .status(500)
         .json({ message: `There was an error sending your message. ${err}` });
