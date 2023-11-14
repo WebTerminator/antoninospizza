@@ -1,4 +1,3 @@
-// send email request
 import { FormValues } from "@/shared/";
 const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -32,12 +31,10 @@ export default async function handler(
     const data = {
       to: process.env.EMAIL_ADDRESS,
       from: process.env.EMAIL_ADDRESS,
-      subject: `${firstName.toUpperCase()}${" "} ${lastName.toUpperCase()} sent you a message`,
+      subject: `${eventDate} by ${lastName.toUpperCase()}`,
       text: `Email => ${email}`,
       html: msg.replace(/\r\n/g, "<br>"),
     };
-
-    console.log(data);
 
     try {
       await sgMail.send(data);

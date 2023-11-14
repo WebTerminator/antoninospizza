@@ -5,31 +5,21 @@ import "react-toastify/dist/ReactToastify.css";
 import { InputFormField } from "./InputFormField";
 import { SelectFormField } from "./SelectFormField";
 import { type FormValues } from "@/shared/";
+import { sendEamil } from "../services/email";
 
 export const EventsForm = () => {
   const { register, handleSubmit, reset } = useForm<FormValues>();
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    const submitData = async () => {
-      try {
-        const res = await fetch("/api/send-email", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        });
-
-        if (res.status === 200) {
-          toast.success("Your message has been sent!");
-          reset();
-        }
-      } catch (err) {
-        toast.error("Something went wrong. Please try again later.");
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    try {
+      const res = await sendEamil(data);
+      if (res.status === 200) {
+        toast.success("Your message has been sent!");
+        reset();
       }
-    };
-
-    submitData();
+    } catch (err) {
+      toast.error("Something went wrong. Please try again later.");
+    }
   };
 
   return (
