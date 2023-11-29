@@ -10,6 +10,7 @@ export const navItems = [
   { label: "Home", link: "/" },
   { label: "About us", link: "/about" },
   { label: "Menu", link: "/menu" },
+  { label: "Events", link: "/events" },
   { label: "Contact us", link: "/contact" },
   ...sociaLinks,
 ];
@@ -175,3 +176,18 @@ export const DessertMenu = [
     description: "Mini folded pizza, stuffed with Nutella.",
   },
 ];
+
+export type FormValues = {
+  firstName: string;
+  lastName: string;
+  company: string;
+  email: string;
+  phone: string;
+  postcode: string;
+  eventType: string;
+  guests: number;
+  eventDate: string;
+  servingTime: string;
+  additionalInfo?: string;
+};
+

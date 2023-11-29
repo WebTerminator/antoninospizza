@@ -21,7 +21,7 @@ img {
 }
 
 ul {
-  margin-left: 20px;
+  margin-left: 40px;
   margin-bottom: 40px;
 }
 
@@ -46,6 +46,11 @@ h3 {
   font-size: 30px;
   margin-bottom: 18px;
   font-weight: 600;
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 4px;
 }
 
 ul p {
@@ -128,6 +133,61 @@ ul + .button {
   display: flex;
 }
 
+.flex-1 {
+  flex: 1;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin: 0 5px 20px 5px;
+}
+
+input,
+select,
+textarea {
+  appearance: none;
+  border: 1px solid #ccc;
+  padding: 10px 6px;
+  border-radius: 6px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: column;
+}
+
+select {
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+select:focus {
+  background-image: linear-gradient(
+      45deg,
+      var(--primary-red) 50%,
+      transparent 50%
+    ),
+    linear-gradient(135deg, transparent 50%, var(--primary-red) 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
+    calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: var(--primary-red);
+  outline: 0;
+}
+
 @media (min-width: 1024px) {
   ul + .button {
     display: inline-block;
@@ -155,5 +215,10 @@ ul + .button {
 
   .logo-wrapper {
     max-width: 100%;
+  }
+
+  .flex-row {
+    display: flex;
+    flex-direction: row;
   }
 }
