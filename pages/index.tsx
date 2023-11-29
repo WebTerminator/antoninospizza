@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { NextSeo } from "next-seo";
 import styles from "@/styles/Home.module.css";
+import Link from "next/link";
 
 export default function Home() {
   const { section } = styles as any;
@@ -104,9 +105,9 @@ export default function Home() {
                   </p>
                 </li>
               </ul>
-              <a className="button" href="/events">
+              <Link className="button" href="/events">
                 Book your event today!
-              </a>
+              </Link>
             </div>
           </div>
         </section>
