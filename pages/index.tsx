@@ -104,7 +104,7 @@ export default function Home() {
                   </p>
                 </li>
               </ul>
-              <a className="button" href="mailto:a.santorufo@icloud.com">
+              <a className="button" href="/events">
                 Book your event today!
               </a>
             </div>
