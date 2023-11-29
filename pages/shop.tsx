@@ -8,7 +8,6 @@ function Shop(props: any) {
   return (
     <div className="flex">
       {props.products.edges.map((product: any) => {
-        console.log(product);
         return (
           <div className={styles["product-wrapper"]} key={product.node.id}>
             <div className={styles.container}>
@@ -32,8 +31,6 @@ function Shop(props: any) {
 
 export async function getServerSideProps() {
   let data = await getProducts();
-  const m: any = await getMetaobjects();
-  console.log(m.metaobjects.nodes[0].field.value);
   return {
     props: data,
   };
