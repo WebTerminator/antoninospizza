@@ -89,7 +89,7 @@ export const CartProvider = ({ children }: any) => {
 
     const setUrl = async () => {
       if (cartId) {
-        const { cart } = await getCheckoutUrl(cartId);
+        const { cart } = (await getCheckoutUrl(cartId)) as any;
 
         setCheckoutUrl(cart?.checkoutUrl);
       }
@@ -125,7 +125,7 @@ export const CartProvider = ({ children }: any) => {
       sessionStorage.setItem("cartId", cartId);
     }
 
-    const { cart } = await getCheckoutUrl(cartId);
+    const { cart } = (await getCheckoutUrl(cartId)) as any;
 
     setCheckoutUrl(cart?.checkoutUrl);
   };
