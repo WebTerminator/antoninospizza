@@ -1,15 +1,36 @@
 .product-wrapper {
   padding: 20px;
-}
-
-.product-wrapper img {
-  width: 50%;
-  margin: 10px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 40px;
 }
 
 .product-wrapper button {
-  padding: 10px;
-  background-color: white;
-  border: 1px solid grey;
-  cursor: pointer;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: uppercase;
 }
+
+.product-wrapper img {
+  width: 60%;
+  border-radius: 10px;
+}
+
+.product-wrapper div {
+  align-self: center;
+  width: 100%;
+}
+
+.shop {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+}
+
+

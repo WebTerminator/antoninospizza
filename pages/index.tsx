@@ -5,7 +5,7 @@ import { getProducts } from "../utils/shopify";
 
 export default function Home(props: any) {
   const { section } = styles as any;
-  console.log(props);
+
   return (
     <>
       <NextSeo

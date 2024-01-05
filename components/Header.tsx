@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import classNames from "classnames";
@@ -9,30 +9,15 @@ import NavItemsStyle from "@/styles/NavItems.module.css";
 import { navItems } from "@/shared/";
 import { MobileNav } from "@/components/MobileNav";
 import MobileNavStyle from "@/styles/MobileNav.module.css";
-import { retrieveCart } from "../utils/shopify";
+import { useCart } from "@/cart.context";
 
-export const Header = () => {
+export const Header = ({ toggleShoppingCart }: any) => {
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
   const router = useRouter();
   const { header, navigation } = styles;
   const isHomePath = router.pathname === "/";
-
-  useEffect(() => {
-    let cartId: any;
-
-    if (typeof window !== "undefined") {
-      cartId = sessionStorage.getItem("cartId");
-    }
-
-    const loadCart = async () => {
-      if (cartId) {
-        const cart = await retrieveCart(cartId);
-        console.log(cart);
-      }
-    };
-
-    loadCart();
-  }, []);
+  const { totalQuantity } = useCart();
+  const isCartEmpty = totalQuantity === 0;
 
   const getNavItemStyle = (link: string) =>
     classNames(NavItemsStyle["nav-item"], {
@@ -52,18 +37,7 @@ export const Header = () => {
       <ul className={navigation}>
         {navItems.map((item) => {
           if (item.label === "facebook" || item.label === "instagram") {
-            return (
-              <li className="social" key={item.label}>
-                <Link target="_blank" href={item.link}>
-                  <img
-                    width="32"
-                    height="32"
-                    src={`icons/${item.label}.svg`}
-                    alt={`${item.label} account`}
-                  />
-                </Link>
-              </li>
-            );
+            return;
           }
           return (
             <li key={item.label}>
@@ -73,6 +47,45 @@ export const Header = () => {
             </li>
           );
         })}
+        <li
+          style={{
+            position: "relative",
+          }}
+        >
+          <button
+            style={{
+              appearance: "none",
+              backgroundColor: "transparent",
+              border: "none",
+              cursor: "pointer",
+            }}
+            onClick={toggleShoppingCart}
+          >
+            <img
+              style={{
+                width: "28px",
+              }}
+              src="icons/shopping-cart.svg"
+              alt="shopping cart"
+            />
+          </button>
+          {!isCartEmpty && (
+            <span
+              style={{
+                position: "absolute",
+                top: "-10px",
+                right: "-10px",
+                backgroundColor: "#ec615c",
+                borderRadius: "50%",
+                padding: "2px 6px",
+                color: "white",
+                fontSize: "12px",
+              }}
+            >
+              {totalQuantity}
+            </span>
+          )}
+        </li>
       </ul>
 
       <button
