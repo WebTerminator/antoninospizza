@@ -69,9 +69,13 @@ function Product(props: any) {
             <span style={{ fontWeight: "bold" }}>Ingredients:</span>{" "}
             {ingredients.value}
           </p>
-          <p style={{ fontSize: "14px" }}>
+          <p style={{ fontSize: "14px", marginBottom: "10px" }}>
             <span style={{ fontWeight: "bold" }}>Allergens:</span>{" "}
             {allergens.value}
+          </p>
+          <p style={{ fontSize: "14px" }}>
+            <span style={{ fontWeight: "bold" }}>Weight:</span>{" "}
+            {variants.nodes[0].weight}gr
           </p>
           <QuantitySelector
             handleQuantityChange={handleQuantityChange}

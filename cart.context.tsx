@@ -116,11 +116,15 @@ export const CartProvider = ({ children }: any) => {
 
       setTotalQuantity(updatedCart.cartLinesAdd.cart.totalQuantity);
       setCartItems(updatedCart.cartLinesAdd.cart.lines.nodes);
+      setTotalPrice(
+        updatedCart.cartLinesAdd.cart.estimatedCost.totalAmount.amount
+      );
     } else {
       let data: any = await createAndAddToCart({ itemId: productId, quantity });
 
       setTotalQuantity(data.cartCreate.cart.totalQuantity);
       setCartItems(data.cartCreate.cart.lines.nodes);
+      setTotalPrice(data.cartCreate.cart.estimatedCost.totalAmount.amount);
       cartId = data.cartCreate.cart.id;
       sessionStorage.setItem("cartId", cartId);
     }
@@ -163,6 +167,9 @@ export const CartProvider = ({ children }: any) => {
 
     setTotalQuantity(updatedCart.cartLinesRemove.cart.totalQuantity);
     setCartItems(updatedCart.cartLinesRemove.cart.lines.nodes);
+    setTotalPrice(
+      updatedCart.cartLinesRemove.cart.estimatedCost.totalAmount.amount
+    );
   };
 
   return (

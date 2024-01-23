@@ -27,9 +27,6 @@ export const CartItem = ({ el }: any) => {
     }
 
     // refactor if statement
-
-   
-
   };
 
   return (
@@ -67,7 +64,7 @@ export const CartItem = ({ el }: any) => {
               marginBottom: "15px",
             }}
           >
-            {el?.merchandise.product.title}
+            {el?.merchandise?.product?.title}
           </p>
           <QuantitySelector
             handleQuantityChange={handleQuantityChange}

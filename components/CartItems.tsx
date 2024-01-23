@@ -1,5 +1,4 @@
 import { useCart } from "@/cart.context";
-import { QuantitySelector } from "./QuantitySelector";
 import { CartItem } from "./CartItem";
 
 export const CartItems = () => {

@@ -12,6 +12,11 @@ export const CART_COMMON_FIELDS = gql`
   fragment cartProducts on Cart {
     id
     totalQuantity
+    estimatedCost {
+      totalAmount {
+        amount
+      }
+    }
     lines(first: 10) {
       nodes {
         id
@@ -99,6 +104,7 @@ export async function getProduct({ handle }: { handle: string }) {
               amount
               currencyCode
             }
+            weight
             id
           }
         }
@@ -111,7 +117,7 @@ export async function getProduct({ handle }: { handle: string }) {
   };
 
   try {
-    const data = await graphQLClient.request(
+    const data: any = await graphQLClient.request(
       getSingleProductDetails,
       variables
     );
@@ -173,6 +179,12 @@ export async function removeCartLine({
       cartLinesRemove(cartId: $cartId, lineIds: $lineIds) {
         cart {
           id
+          totalQuantity
+          estimatedCost {
+            totalAmount {
+              amount
+            }
+          }
           totalQuantity
           lines(first: 10) {
             nodes {
@@ -247,11 +259,6 @@ export async function updateCartLines2({
       cartLinesUpdate(cartId: $cartId, lines: $lines) {
         cart {
           ...cartProducts
-          estimatedCost {
-            totalAmount {
-              amount
-            }
-          }
         }
       }
     }
