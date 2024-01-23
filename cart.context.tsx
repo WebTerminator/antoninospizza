@@ -7,6 +7,8 @@ import {
   updateCartLines2,
   removeCartLine,
 } from "./utils/shopify";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 type ItemType = {
   name: string;
@@ -128,6 +130,7 @@ export const CartProvider = ({ children }: any) => {
       cartId = data.cartCreate.cart.id;
       sessionStorage.setItem("cartId", cartId);
     }
+    toast.success("A product has been added!");
 
     const { cart } = (await getCheckoutUrl(cartId)) as any;
 
@@ -148,7 +151,7 @@ export const CartProvider = ({ children }: any) => {
       quantity,
       mainId,
     });
-    console.log(updatedCart);
+
     setTotalPrice(
       updatedCart.cartLinesUpdate.cart.estimatedCost.totalAmount.amount
     );
@@ -184,7 +187,10 @@ export const CartProvider = ({ children }: any) => {
         handleUpdateExistingCartLines,
       }}
     >
-      {children}
+      <>
+        {children}
+        <ToastContainer position="top-center" />
+      </>
     </CartContext.Provider>
   );
 };

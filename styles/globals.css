@@ -2,6 +2,7 @@
   --primary-black: #000;
   --primary-red: #ec615c;
   --primary-green: #6ca32e;
+  --toastify-icon-color-success: var(--primary-red);
 }
 
 * {
@@ -228,3 +229,15 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.Toastify__progress-bar,
+.Toastify__progress-bar--animated,
+.Toastify__progress-bar-theme--light,
+.Toastify__progress-bar--succes {
+  background-color: var(--primary-red) !important;
+}
+
+.Toastify--animate-icon svg {
+  fill: var(--primary-red) !important;
+}
+

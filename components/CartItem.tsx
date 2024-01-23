@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { QuantitySelector } from "./QuantitySelector";
 import { useCart } from "@/cart.context";
 
@@ -25,9 +24,9 @@ export const CartItem = ({ el }: any) => {
           mainId: el.id,
         });
     }
-
-    // refactor if statement
   };
+
+  const totalItemPrice = el?.merchandise?.price?.amount * el.quantity;
 
   return (
     <li
@@ -61,10 +60,17 @@ export const CartItem = ({ el }: any) => {
             style={{
               fontSize: "14px",
               fontWeight: "bold",
-              marginBottom: "15px",
+              marginBottom: "5px",
             }}
           >
             {el?.merchandise?.product?.title}
+          </p>
+          <p
+            style={{
+              fontSize: "12px",
+            }}
+          >
+            {totalItemPrice} {el?.merchandise?.price.currencyCode}
           </p>
           <QuantitySelector
             handleQuantityChange={handleQuantityChange}

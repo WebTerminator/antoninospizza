@@ -34,9 +34,9 @@ function Shop(props: any) {
 }
 
 export async function getServerSideProps() {
-  let data = await getProducts();
+  const props = await getProducts();
   return {
-    props: data,
+    props,
   };
 }
 

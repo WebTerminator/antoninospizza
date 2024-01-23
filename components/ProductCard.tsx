@@ -4,7 +4,13 @@ import { useState } from "react";
 import { useCart } from "@/cart.context";
 import Link from "next/link";
 
-export const ProductCard = ({ featuredImage, id, title, variants, handle }: any) => {
+export const ProductCard = ({
+  featuredImage,
+  id,
+  title,
+  variants,
+  handle,
+}: any) => {
   const { handleAddToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
 
@@ -55,7 +61,8 @@ export const ProductCard = ({ featuredImage, id, title, variants, handle }: any)
           margin: "0 0 20px 0",
         }}
       >
-        £{variants.edges[0].node.price.amount}
+        £{variants.edges[0].node.price.amount}{" "}
+        {variants.edges[0].node.price.currencyCode}
       </p>
       <div
         style={{ display: "flex", justifyContent: " center", alignItems: "" }}

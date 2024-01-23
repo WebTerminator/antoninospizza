@@ -77,12 +77,25 @@ function Product(props: any) {
             <span style={{ fontWeight: "bold" }}>Weight:</span>{" "}
             {variants.nodes[0].weight}gr
           </p>
-          <QuantitySelector
-            handleQuantityChange={handleQuantityChange}
-            setQuantity={setQuantity}
-            quantity={quantity}
-            defaultPosition="start"
-          />
+          <div style={{ marginBottom: "20px" }}>
+            <QuantitySelector
+              handleQuantityChange={handleQuantityChange}
+              setQuantity={setQuantity}
+              quantity={quantity}
+              defaultPosition="start"
+            />
+          </div>
+
+          <p
+            style={{
+              fontSize: "18px",
+              fontWeight: "bold",
+              marginBottom: "0",
+            }}
+          >
+            £{variants.nodes[0].price.amount}{" "}
+            {variants.nodes[0].price.currencyCode}
+          </p>
           <button
             className="button"
             style={{

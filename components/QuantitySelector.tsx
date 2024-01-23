@@ -35,7 +35,7 @@ export const QuantitySelector = ({
       </button>
       <input
         style={{
-          width: "24px",
+          width: "26px",
           textAlign: "center",
           border: "none",
           outline: "none",
