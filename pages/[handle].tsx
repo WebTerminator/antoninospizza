@@ -2,6 +2,7 @@ import { useCart } from "@/cart.context";
 import { QuantitySelector } from "@/components/QuantitySelector";
 import { getProduct } from "@/utils/shopify";
 import { useState } from "react";
+import styles from "@/styles/Handle.module.css";
 
 function Product(props: any) {
   const { handleAddToCart } = useCart();
@@ -41,28 +42,12 @@ function Product(props: any) {
   };
 
   return (
-    <div
-      className="container"
-      style={{
-        minHeight: "calc(100vh - 220px)",
-      }}
-    >
-      <div style={{ display: "flex" }}>
-        <div
-          style={{
-            marginRight: "20px",
-            maxWidth: "400px",
-            borderRadius: "10px",
-            overflow: "hidden",
-          }}
-        >
+    <div className={styles["container"]}>
+      <div className={styles["inner"]}>
+        <div className={styles["left"]}>
           <img src={url} alt="Pizza illustration" />
         </div>
-        <div
-          style={{
-            width: "50%",
-          }}
-        >
+        <div className={styles["right"]}>
           <h1 style={{ marginBottom: "20px" }}>{title}</h1>
           <p>{description}</p>
           <p style={{ fontSize: "14px", marginBottom: "10px" }}>
