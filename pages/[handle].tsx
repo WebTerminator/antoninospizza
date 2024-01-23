@@ -4,6 +4,12 @@ import { getProduct } from "@/utils/shopify";
 import { useState } from "react";
 import styles from "@/styles/Handle.module.css";
 
+const ProductInfo = ({ label, value }: { label: string; value: string }) => (
+  <p style={{ fontSize: "14px" }}>
+    <span style={{ fontWeight: "bold" }}>{label}:</span> {value}
+  </p>
+);
+
 function Product(props: any) {
   const { handleAddToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
@@ -50,18 +56,14 @@ function Product(props: any) {
         <div className={styles["right"]}>
           <h1 style={{ marginBottom: "20px" }}>{title}</h1>
           <p>{description}</p>
-          <p style={{ fontSize: "14px", marginBottom: "10px" }}>
-            <span style={{ fontWeight: "bold" }}>Ingredients:</span>{" "}
-            {ingredients.value}
-          </p>
-          <p style={{ fontSize: "14px", marginBottom: "10px" }}>
-            <span style={{ fontWeight: "bold" }}>Allergens:</span>{" "}
-            {allergens.value}
-          </p>
-          <p style={{ fontSize: "14px" }}>
-            <span style={{ fontWeight: "bold" }}>Weight:</span>{" "}
-            {variants.nodes[0].weight}gr
-          </p>
+
+          <ProductInfo label="Ingredients" value={ingredients.value} />
+          <ProductInfo label="Allergens" value={allergens.value} />
+          <ProductInfo
+            label="Weight"
+            value={`${variants.nodes[0].weight} gr`}
+          />
+
           <div style={{ marginBottom: "20px" }}>
             <QuantitySelector
               handleQuantityChange={handleQuantityChange}
@@ -97,9 +99,8 @@ function Product(props: any) {
 }
 
 export async function getServerSideProps({ query: { handle } }: any) {
-  let data = await getProduct({ handle });
   return {
-    props: data,
+    props: await getProduct({ handle }),
   };
 }
 
