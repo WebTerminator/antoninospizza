@@ -1,4 +1,10 @@
 import { gql, GraphQLClient } from "graphql-request";
+import {
+  GetProductResponse,
+  getSingleProductDetails,
+  getAllProductsQuery,
+  GetProductsResponse,
+} from "./queries";
 
 const storefrontAccessToken = process.env.NEXT_SHOPIFY_STOREFRONT_ACCESSTOKEN;
 const endpoint = process.env.NEXT_SHOPIFY_STORE_DOMAIN;
@@ -43,38 +49,10 @@ export const CART_COMMON_FIELDS = gql`
 `;
 
 export async function getProducts() {
-  const getAllProductsQuery = gql`
-    {
-      products(first: 10) {
-        edges {
-          node {
-            variants(first: 10) {
-              edges {
-                node {
-                  id
-                  price {
-                    amount
-                    currencyCode
-                  }
-                  sku
-                  availableForSale
-                }
-              }
-            }
-            id
-            title
-            handle
-            featuredImage {
-              altText
-              url
-            }
-          }
-        }
-      }
-    }
-  `;
   try {
-    const data = await graphQLClient.request(getAllProductsQuery);
+    const data: GetProductsResponse = await graphQLClient.request(
+      getAllProductsQuery
+    );
 
     return data;
   } catch (error) {
@@ -83,41 +61,12 @@ export async function getProducts() {
 }
 
 export async function getProduct({ handle }: { handle: string }) {
-  const getSingleProductDetails = gql`
-    query getProductIdFromHandle($handle: String!) {
-      productByHandle(handle: $handle) {
-        id
-        title
-        description
-        featuredImage {
-          url
-        }
-        ingredients: metafield(namespace: "custom", key: "ingredients") {
-          value
-        }
-        allergens: metafield(namespace: "custom", key: "allergens") {
-          value
-        }
-        variants(first: 1) {
-          nodes {
-            price {
-              amount
-              currencyCode
-            }
-            weight
-            id
-          }
-        }
-      }
-    }
-  `;
-
   const variables = {
     handle,
   };
 
   try {
-    const data: any = await graphQLClient.request(
+    const data: GetProductResponse = await graphQLClient.request(
       getSingleProductDetails,
       variables
     );

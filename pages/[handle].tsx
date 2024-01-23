@@ -3,6 +3,7 @@ import { QuantitySelector } from "@/components/QuantitySelector";
 import { getProduct } from "@/utils/shopify";
 import { useState } from "react";
 import styles from "@/styles/Handle.module.css";
+import { GetProductResponse } from "@/utils/queries";
 
 const ProductInfo = ({ label, value }: { label: string; value: string }) => (
   <p style={{ fontSize: "14px" }}>
@@ -10,7 +11,7 @@ const ProductInfo = ({ label, value }: { label: string; value: string }) => (
   </p>
 );
 
-function Product(props: any) {
+function Product(props: GetProductResponse) {
   const { handleAddToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const {
@@ -98,7 +99,11 @@ function Product(props: any) {
   );
 }
 
-export async function getServerSideProps({ query: { handle } }: any) {
+export async function getServerSideProps({
+  query: { handle },
+}: {
+  query: { handle: string };
+}) {
   return {
     props: await getProduct({ handle }),
   };
