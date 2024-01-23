@@ -24,7 +24,7 @@ export const Header = ({ toggleShoppingCart }: any) => {
       [NavItemsStyle["itemActive"]]: router.pathname === link,
     });
 
-  const logo = <img src="Logo.svg" alt="Antonino's pizza logo" />;
+  const logo = <img src="Logo.svg" alt="Logo" />;
 
   return (
     <header className={header}>

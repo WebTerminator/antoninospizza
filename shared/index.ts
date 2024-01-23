@@ -3,7 +3,7 @@ export const sociaLinks = [
     label: "facebook",
     link: "https://www.facebook.com/Antoninospizzaofficial",
   },
-  { label: "instagram", link: "https://www.instagram.com/antonino_pizza/" },
+  { label: "instagram", link: "https://www.instagram.com/antoninospizzauk/" },
 ];
 
 export const navItems = [
@@ -14,6 +14,7 @@ export const navItems = [
     label: "Shop",
     link: "/shop",
   },
+  { label: "Events", link: "/events" },
   { label: "Contact us", link: "/contact" },
 
   ...sociaLinks,
@@ -180,3 +181,17 @@ export const DessertMenu = [
     description: "Mini folded pizza, stuffed with Nutella.",
   },
 ];
+
+export type FormValues = {
+  firstName: string;
+  lastName: string;
+  company: string;
+  email: string;
+  phone: string;
+  postcode: string;
+  eventType: string;
+  guests: number;
+  eventDate: string;
+  servingTime: string;
+  additionalInfo?: string;
+};
