@@ -3,9 +3,9 @@ import "mapbox-gl/dist/mapbox-gl.css";
 
 import "mapbox-gl/dist/mapbox-gl.css";
 import { createRef, useEffect, useRef } from "react";
-import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
+import mapboxgl from "mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 
-mapboxgl.accessToken = process.env.NEXT_MAPBOX_ACCESS_TOKEN;
+mapboxgl.accessToken = process.env.NEXT_MAPBOX_ACCESS_TOKEN as string;
 
 const Marker = ({ onClick, children, feature }: any) => {
   const _onClick = () => {
