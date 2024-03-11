@@ -32,5 +32,7 @@ const Widget = ({ source }: { source: "instagram" | "google" }) => {
       </>
     );
   }
+
+  return null;
 };
 export default Widget;
