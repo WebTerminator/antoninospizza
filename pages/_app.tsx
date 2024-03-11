@@ -2,12 +2,15 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { CartProvider } from "@/cart.context";
+import { CartProvider, useCart } from "@/cart.context";
 import { useState } from "react";
 import { CartItems } from "@/components/CartItems";
 
+import styles from "@/styles/Cart.module.css";
 export default function App({ Component, pageProps }: AppProps) {
   const [isShoppingCartVisible, toggleShoppingCart] = useState(false);
+  const { items } = useCart();
+  console.log(items);
 
   const handleToggleCart = () => toggleShoppingCart(!isShoppingCartVisible);
 
@@ -27,17 +30,9 @@ export default function App({ Component, pageProps }: AppProps) {
       />
       <CartProvider>
         <div
+          className={styles["cart-wrapper"]}
           style={{
-            backgroundColor: "white",
-            padding: "30px",
-            right: isShoppingCartVisible ? "0" : "-300px",
-            height: "100vh",
-            width: "300px",
-            position: "fixed",
-            top: "0",
-            zIndex: 100,
-            transition: "all 0.3s ease-in-out",
-            borderLeft: "1px solid #ccc",
+            right: isShoppingCartVisible ? "0" : "-420px",
           }}
         >
           <div
@@ -46,16 +41,18 @@ export default function App({ Component, pageProps }: AppProps) {
               justifyContent: "space-between",
               alignItems: "center",
               marginBottom: "40px",
+              borderBottom: "1px solid black",
+              paddingBottom: "10px",
             }}
           >
             <p
               style={{
-                fontSize: "18px",
-                fontWeight: "bold",
+                fontSize: "24px",
+                fontWeight: "semi-bold",
                 marginBottom: "0",
               }}
             >
-              Cart
+              Cart ({items.length})
             </p>
             <button
               onClick={handleToggleCart}
@@ -85,6 +82,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Header toggleShoppingCart={handleToggleCart} />
         <Component {...pageProps} />
       </CartProvider>
+
       <Footer />
     </div>
   );

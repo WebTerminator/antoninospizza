@@ -1,14 +1,31 @@
+import { useState } from "react";
+
 import { useCart } from "@/cart.context";
 import { QuantitySelector } from "@/components/QuantitySelector";
 import { getProduct } from "@/utils/shopify";
-import { useState } from "react";
-import styles from "@/styles/Handle.module.css";
 import { GetProductResponse } from "@/utils/queries";
+import styles from "@/styles/Handle.module.css";
+import { Instructions } from "@/components/Instructions";
+import Widget from "@/components/widget";
 
-const ProductInfo = ({ label, value }: { label: string; value: string }) => (
-  <p style={{ fontSize: "14px" }}>
-    <span style={{ fontWeight: "bold" }}>{label}:</span> {value}
-  </p>
+const ProductInfo = ({
+  label,
+  value,
+  iconUrl,
+}: {
+  label: string;
+  value: string;
+  iconUrl: string;
+}) => (
+  <>
+    <div style={{ display: "flex", alignItems: "center", gap: ".2rem" }}>
+      <img style={{ width: "20px" }} src={iconUrl} />
+      <p style={{ fontSize: "14px", marginBottom: "0", fontWeight: "bold" }}>
+        {label}
+      </p>
+    </div>
+    <p style={{ fontSize: "14px" }}>{value}</p>
+  </>
 );
 
 function Product(props: GetProductResponse) {
@@ -55,46 +72,52 @@ function Product(props: GetProductResponse) {
           <img src={url} alt="Pizza illustration" />
         </div>
         <div className={styles["right"]}>
-          <h1 style={{ marginBottom: "20px" }}>{title}</h1>
-          <p>{description}</p>
-
-          <ProductInfo label="Ingredients" value={ingredients.value} />
-          <ProductInfo label="Allergens" value={allergens.value} />
-          <ProductInfo
-            label="Weight"
-            value={`${variants.nodes[0].weight} gr`}
-          />
-
-          <div style={{ marginBottom: "20px" }}>
-            <QuantitySelector
-              handleQuantityChange={handleQuantityChange}
-              setQuantity={setQuantity}
-              quantity={quantity}
-              defaultPosition="start"
-            />
-          </div>
-
+          <h2 style={{ marginBottom: "32px", textAlign: "left" }}>{title}</h2>
           <p
             style={{
-              fontSize: "18px",
-              fontWeight: "bold",
-              marginBottom: "0",
+              fontSize: "24px",
+              lineHeight: "32px",
+              marginBottom: "32px",
             }}
           >
             £{variants.nodes[0].price.amount}{" "}
             {variants.nodes[0].price.currencyCode}
           </p>
-          <button
-            className="button"
-            style={{
-              marginTop: "10px",
-            }}
-            onClick={addToCart}
-          >
-            Add to cart
-          </button>
+
+          <div className={styles["actions-wrapper"]}>
+            <QuantitySelector
+              handleQuantityChange={handleQuantityChange}
+              // setQuantity={setQuantity}
+              quantity={quantity}
+            />
+
+            <button className="button" onClick={addToCart}>
+              Add to cart
+            </button>
+          </div>
+          <p>{description}</p>
+
+          <ProductInfo
+            label="Ingredients"
+            value={ingredients.value}
+            iconUrl="icons/bowl.svg"
+          />
+          <ProductInfo
+            label="Allergens"
+            value={allergens.value}
+            iconUrl="icons/boy.svg"
+          />
+          <ProductInfo
+            label="Weight"
+            value={`${variants.nodes[0].weight} gr`}
+            iconUrl="icons/time.svg"
+          />
         </div>
       </div>
+
+      <Instructions />
+
+      <Widget source="google" />
     </div>
   );
 }

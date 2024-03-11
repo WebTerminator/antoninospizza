@@ -1,12 +1,12 @@
 .product-wrapper {
-  padding: 20px;
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 0 40px;
+  margin: 0 40px 50px 40px;
 
-  margin-bottom: 40px;
+  @media (min-width: 1024px) {
+    margin: 0 70px 0 70px;
+  }
 }
 
 .product-wrapper button {
@@ -16,8 +16,9 @@
 }
 
 .product-wrapper img {
-  width: 60%;
-  border-radius: 10px;
+  width: 100%;
+  border-radius: 50%;
+  max-width: 220px;
 }
 
 .product-wrapper div {
@@ -25,12 +26,54 @@
   width: 100%;
 }
 
+.product-wrapper button {
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    width: auto;
+  }
+}
+
 .shop {
   display: flex;
   flex-direction: column;
   padding-top: 20px;
+  margin: 0 26px 80px 26px;
 
   @media (min-width: 1024px) {
     flex-direction: row;
+    margin-bottom: 120px;
+  }
+}
+
+.cooking-info {
+  padding: 0;
+  text-align: center;
+
+  @media (min-width: 1024px) {
+    padding: 0 10rem;
+  }
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+}
+
+.instructions > div > div {
+  margin-bottom: 2rem;
+}
+
+.instructions > div {
+  text-align: center;
+
+  padding: 1rem;
+
+  @media (min-width: 1024px) {
+    padding: 4rem;
   }
 }

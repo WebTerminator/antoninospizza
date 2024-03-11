@@ -1,48 +1,24 @@
 import { useCart } from "@/cart.context";
 import { CartItem } from "./CartItem";
+import styles from "@/styles/Cart.module.css";
 
 export const CartItems = () => {
   const { items, checkoutUrl, totalPrice } = useCart();
   return (
-    <ul
-      style={{
-        listStyle: "none",
-        padding: "0",
-        margin: "0",
-      }}
-    >
+    <ul className={styles["ul-wrapper"]}>
       {items?.map((el) => (
         <CartItem key={el.id} el={el} />
       ))}
-      <div
-        style={{
-          position: "absolute",
-          bottom: "0",
-          width: "100%",
-          left: "0",
-          padding: "1rem",
-        }}
-      >
-        <p
-          style={{
-            textAlign: "center",
-            fontSize: "30px",
-            fontWeight: "bold",
-            borderBottom: "1px solid #000",
-            marginBottom: "1rem",
-          }}
-        >
-          Total: £{totalPrice}
-        </p>
+      <div className={styles["footer"]}>
+        <div>
+          <p className={styles["total"]}>Total: </p>
+          <p>£{totalPrice}</p>
+        </div>
+
         <a
-          className="button"
           target="_blank"
           href={checkoutUrl}
-          style={{
-            textAlign: "center",
-            width: "100%",
-            display: "block",
-          }}
+          className={`${styles["checkout"]} button`}
         >
           Checkout
         </a>

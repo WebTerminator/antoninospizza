@@ -14,6 +14,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
           rel="stylesheet"
         />
+
         <meta
           name="google-site-verification"
           content="xnCTjBzcNQUfZOYPXTxd5EbbCAuwVwoFlkihB73lffQ"
@@ -23,6 +24,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+      
       </body>
     </Html>
   );

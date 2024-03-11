@@ -10,6 +10,10 @@
   margin: 0;
 }
 
+.logoStyle {
+  max-width: 210px;
+}
+
 .navigation {
   display: none;
 }

@@ -12,13 +12,18 @@
 }
 
 html,
-body {
+body,
+* {
   font-family: "Open Sans", sans-serif;
 }
 
 img {
   width: 100%;
   height: 100%;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 ul {
@@ -31,9 +36,6 @@ h2 {
   font-size: 36px;
   line-height: 1.33;
   margin-bottom: 28px;
-}
-
-.h2 {
   text-align: center;
 }
 
@@ -113,7 +115,6 @@ img {
   cursor: pointer;
   border-radius: 4px;
   text-decoration: none;
-  margin-bottom: 10px;
 }
 
 ul + .button {
@@ -189,6 +190,15 @@ select:focus {
   outline: 0;
 }
 
+.button-control {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  background: transparent;
+}
+
 @media (min-width: 1024px) {
   ul + .button {
     display: inline-block;
@@ -208,6 +218,17 @@ select:focus {
 
   h2 + p {
     font-size: 24px;
+  }
+
+  .eui-widget-title,
+  .es-widget-title,
+  .eapps-instagram-feed-title {
+    font-size: 36px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .eapps-instagram-feed-posts-item-link {
+    padding: 20px !important;
   }
 
   h3 {
@@ -241,3 +262,16 @@ input::-webkit-inner-spin-button {
   fill: var(--primary-red) !important;
 }
 
+.mapboxgl-popup-content {
+  padding: 0 !important;
+}
+
+.eapps-instagram-feed-posts-view {
+  max-width: 1440px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+#eapps-instagram-feed-1 > a {
+  display: none !important;
+}

@@ -1,5 +1,6 @@
 import { QuantitySelector } from "./QuantitySelector";
 import { useCart } from "@/cart.context";
+import styles from "@/styles/Cart.module.css";
 
 export const CartItem = ({ el }: any) => {
   const { handleUpdateExistingCartLines, handleRemoveCartLine } = useCart();
@@ -29,55 +30,36 @@ export const CartItem = ({ el }: any) => {
   const totalItemPrice = el?.merchandise?.price?.amount * el.quantity;
 
   return (
-    <li
-      style={{
-        marginBottom: "20px",
-        borderBottom: "1px solid #ccc",
-
-        paddingBottom: "20px",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-        }}
-      >
-        <img
-          style={{
-            width: "80px",
-            marginRight: "10px",
-          }}
-          src={el?.merchandise?.image?.url}
-        />
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-          }}
-        >
+    <li className={styles["cart-item"]}>
+      <div>
+        <img className={styles["item-img"]} src={el?.merchandise?.image?.url} />
+        <div className={styles["cart-item-info-wrapper"]}>
           <p
             style={{
-              fontSize: "14px",
+              fontSize: "16px",
               fontWeight: "bold",
-              marginBottom: "5px",
+              marginBottom: "0",
             }}
           >
             {el?.merchandise?.product?.title}
           </p>
           <p
             style={{
-              fontSize: "12px",
+              fontSize: "16px",
+              marginBottom: "20px",
             }}
           >
-            {totalItemPrice} {el?.merchandise?.price.currencyCode}
+            £{totalItemPrice}
           </p>
           <QuantitySelector
             handleQuantityChange={handleQuantityChange}
-            defaultPosition="start"
             quantity={el.quantity}
+            size="small"
           />
         </div>
+        <button className="button-control">
+          <img src="icons/trash.svg" />
+        </button>
       </div>
     </li>
   );

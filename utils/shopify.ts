@@ -138,6 +138,14 @@ export async function removeCartLine({
           lines(first: 10) {
             nodes {
               id
+              quantity
+              merchandise {
+                ... on ProductVariant {
+                  image {
+                    url
+                  }
+                }
+              }
             }
           }
         }

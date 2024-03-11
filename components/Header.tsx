@@ -14,7 +14,7 @@ import { useCart } from "@/cart.context";
 export const Header = ({ toggleShoppingCart }: any) => {
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
   const router = useRouter();
-  const { header, navigation } = styles;
+  const { header, navigation, logoStyle } = styles;
   const isHomePath = router.pathname === "/";
   const { totalQuantity } = useCart();
   const isCartEmpty = totalQuantity === 0;
@@ -24,7 +24,7 @@ export const Header = ({ toggleShoppingCart }: any) => {
       [NavItemsStyle["itemActive"]]: router.pathname === link,
     });
 
-  const logo = <img src="Logo.svg" alt="Logo" />;
+  const logo = <img className={logoStyle} src="Logo.svg" alt="Logo" />;
 
   return (
     <header className={header}>

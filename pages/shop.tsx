@@ -2,6 +2,7 @@
 import styles from "@/styles/Shop.module.css";
 import { getProducts } from "../utils/shopify";
 import { ProductCard } from "@/components/ProductCard";
+import { Instructions } from "@/components/Instructions";
 
 function Shop(props: any) {
   return (
@@ -29,6 +30,8 @@ function Shop(props: any) {
           )
         )}
       </div>
+
+      <Instructions />
     </div>
   );
 }

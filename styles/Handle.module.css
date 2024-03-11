@@ -8,26 +8,41 @@
 .inner {
   display: flex;
   flex-direction: column;
+  margin-bottom: 40px;
 
   @media (min-width: 1024px) {
     flex-direction: row;
   }
 }
 
+.left img {
+  width: 80%;
+  border-radius: 50%;
+}
+
 .left {
   overflow: hidden;
   border-radius: 10px;
+  flex: 1.5;
+  justify-content: center;
+  display: flex;
 
   @media (min-width: 1024px) {
     margin-right: 20px;
-    max-width: 400px;
   }
 }
 
 .right {
-  width: 100%;
+  flex: 2;
+}
+
+.actions-wrapper {
+  display: flex;
+  gap: 0.6rem;
+  flex-direction: column;
+  margin-bottom: 32px;
 
   @media (min-width: 1024px) {
-    width: 50%;
+    flex-direction: row;
   }
 }

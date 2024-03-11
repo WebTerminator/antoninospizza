@@ -1,74 +1,70 @@
-import { useState } from "react";
+import styles from "../styles/QuantitySelector.module.css";
 
 export const QuantitySelector = ({
   handleQuantityChange,
   quantity,
-  setQuantity,
-  defaultPosition = "center",
-}: any) => {
-  return (
-    <div
+  size = "large",
+}: {
+  handleQuantityChange: (args: { action: "increment" | "decrement" }) => void;
+  quantity: number;
+  size?: "small" | "large";
+}) => (
+  <div
+    className={styles["wrapper"]}
+    style={{
+      height: size === "small" ? "34px" : "40px",
+      width: size === "small" ? "140px" : "100px",
+    }}
+  >
+    <button
       style={{
-        display: "flex",
-        justifyContent: defaultPosition === "center" ? "center" : "start",
-        alignItems: "center",
+        cursor: quantity === 1 ? "not-allowed" : "pointer",
       }}
+      className={"button-control"}
+      onClick={() => handleQuantityChange({ action: "decrement" })}
+      disabled={quantity === 1}
     >
-      <button
-        style={{
-          width: "24px",
-          height: "24px",
-          cursor: quantity === 0 ? "not-allowed" : "pointer",
-        }}
-        onClick={() => handleQuantityChange({ action: "decrement" })}
-        disabled={quantity === 0}
+      <svg
+        width="24px"
+        height="24px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="24" height="24" fill="white" />
-          <path
-            d="M6 12H18"
-            stroke="#000000"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </button>
-      <input
-        style={{
-          width: "26px",
-          textAlign: "center",
-          border: "none",
-          outline: "none",
-          cursor: "pointer",
-        }}
-        type="text"
-        value={quantity}
-        onChange={setQuantity}
-      />
-      <button
-        style={{
-          width: "24px",
-          height: "24px",
-          cursor: "pointer",
-        }}
-        onClick={() => handleQuantityChange({ action: "increment" })}
-      >
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="24" height="24" fill="white" />
-          <path
-            d="M12 6V18"
-            stroke="#000000"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M6 12H18"
-            stroke="#000000"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </button>
-    </div>
-  );
-};
+        <rect width="24" height="24" fill="white" />
+        <path
+          d="M6 12H18"
+          stroke="#000000"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </button>
+    <input
+      className={styles["input-control"]}
+      type="text"
+      value={quantity}
+      disabled
+    />
+    <button
+      className={"button-control"}
+      onClick={() => handleQuantityChange({ action: "increment" })}
+    >
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="24" height="24" fill="white" />
+        <path
+          d="M12 6V18"
+          stroke="#000000"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M6 12H18"
+          stroke="#000000"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </button>
+  </div>
+);
