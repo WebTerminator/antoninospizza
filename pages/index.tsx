@@ -2,7 +2,7 @@
 import { NextSeo } from "next-seo";
 import styles from "@/styles/Home.module.css";
 import { getProducts } from "../utils/shopify";
-import Widget from "@/components/Widget";
+import { Widget } from "@/components/Widget";
 import { MapWithInfo } from "@/components/MapWithInfo";
 
 export default function Home(props: any) {
