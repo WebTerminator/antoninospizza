@@ -32,7 +32,9 @@ export default function Home() {
         <section className={section}>
           <div>
             <div className={styles["large-text-wrapper"]}>
-              <h2>Handcrafted pizzas made with Love</h2>
+              <h2 style={{ textAlign: "left" }}>
+                Handcrafted pizzas made with Love
+              </h2>
               <p>Authentic Napoletan pizza with our handmade pizza dough</p>
             </div>
           </div>
