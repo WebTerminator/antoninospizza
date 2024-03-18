@@ -2,6 +2,8 @@
 import { NextSeo } from "next-seo";
 import styles from "@/styles/Home.module.css";
 import { getProducts } from "../utils/shopify";
+import { Widget } from "@/components/Widget";
+import { MapWithInfo } from "@/components/MapWithInfo";
 
 export default function Home() {
   const { section } = styles as any;
@@ -111,6 +113,10 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <MapWithInfo />
+
+        <Widget source="instagram" />
       </div>
     </>
   );
