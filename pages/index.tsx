@@ -5,7 +5,7 @@ import { getProducts } from "../utils/shopify";
 import { Widget } from "@/components/Widget";
 import { MapWithInfo } from "@/components/MapWithInfo";
 
-export default function Home(props: any) {
+export default function Home() {
   const { section } = styles as any;
 
   return (
