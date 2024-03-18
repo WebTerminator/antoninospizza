@@ -3,6 +3,7 @@ import styles from "@/styles/Shop.module.css";
 import { getProducts } from "../utils/shopify";
 import { ProductCard } from "@/components/ProductCard";
 import { Instructions } from "@/components/Instructions";
+import { Widget } from "@/components/Widget";
 
 function Shop(props: any) {
   return (
@@ -30,7 +31,7 @@ function Shop(props: any) {
           )
         )}
       </div>
-
+      <Widget source="google" />
       <Instructions />
     </div>
   );
