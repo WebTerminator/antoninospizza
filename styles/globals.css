@@ -276,6 +276,15 @@ input::-webkit-inner-spin-button {
   display: none !important;
 }
 
-.eapps-instagram-feed-header-container {
+.eapps-instagram-feed-header-container,
+.es-widget-title-container {
   display: none !important;
+}
+
+.widget-google {
+  text-align: center;
+
+  @media (min-width: 1024px) {
+    padding: 0 6rem;
+  }
 }
