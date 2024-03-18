@@ -31,8 +31,10 @@ function Shop(props: any) {
           )
         )}
       </div>
-      <Widget source="google" />
+
       <Instructions />
+
+      <Widget source="google" />
     </div>
   );
 }
