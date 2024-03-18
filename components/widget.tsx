@@ -3,7 +3,12 @@
 const Widget = ({ source }: { source: "instagram" | "google" }) => {
   if (source === "instagram") {
     return (
-      <>
+      <div
+        style={{
+          padding: "40px 0",
+        }}
+      >
+        <h3 style={{ textAlign: "center" }}>Instagram</h3>
         <script
           src="https://static.elfsight.com/platform/platform.js"
           data-use-service-core
@@ -13,7 +18,7 @@ const Widget = ({ source }: { source: "instagram" | "google" }) => {
           className="elfsight-app-dbb49ae4-68fb-4d41-ac9a-221236305e49"
           data-elfsight-app-lazy
         ></div>
-      </>
+      </div>
     );
   }
 

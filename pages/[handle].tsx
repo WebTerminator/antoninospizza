@@ -6,7 +6,7 @@ import { getProduct } from "@/utils/shopify";
 import { GetProductResponse } from "@/utils/queries";
 import styles from "@/styles/Handle.module.css";
 import { Instructions } from "@/components/Instructions";
-import Widget from "@/components/widget";
+import Widget from "@/components/Widget";
 
 const ProductInfo = ({
   label,

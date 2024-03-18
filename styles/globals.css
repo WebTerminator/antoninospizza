@@ -275,3 +275,7 @@ input::-webkit-inner-spin-button {
 #eapps-instagram-feed-1 > a {
   display: none !important;
 }
+
+.eapps-instagram-feed-header-container {
+  display: none !important;
+}
