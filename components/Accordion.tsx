@@ -1,9 +1,14 @@
 import { Accordion, AccordionItem as Item } from "@szhsin/react-accordion";
 import styles from "@/styles/Accordion.module.css";
 
-const AccordionItem = ({ header, ...rest }) => (
+const AccordionItem = ({
+  header,
+  children,
+}: {
+  header: string;
+  children: string;
+}) => (
   <Item
-    {...rest}
     header={
       <>
         {header}
