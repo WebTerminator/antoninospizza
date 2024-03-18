@@ -62,7 +62,7 @@ const Info = () => (
   </div>
 );
 
-export default function ContactUs() {
+export default function Contact() {
   return (
     <>
       <NextSeo

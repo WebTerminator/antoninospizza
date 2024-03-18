@@ -10,7 +10,6 @@ import styles from "@/styles/Cart.module.css";
 export default function App({ Component, pageProps }: AppProps) {
   const [isShoppingCartVisible, toggleShoppingCart] = useState(false);
   const { items } = useCart();
-  console.log(items);
 
   const handleToggleCart = () => toggleShoppingCart(!isShoppingCartVisible);
 

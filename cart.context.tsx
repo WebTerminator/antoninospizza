@@ -68,7 +68,7 @@ export const CartProvider = ({ children }: any) => {
   const [totalQuantity, setTotalQuantity] = useState<number>(0);
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const [checkoutUrl, setCheckoutUrl] = useState("");
-  console.log(items);
+ 
   useEffect(() => {
     // get latest cart by id
     const cartId = sessionStorage.getItem("cartId");
