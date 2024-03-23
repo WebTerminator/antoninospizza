@@ -26,7 +26,7 @@ export default function Map2({
         latitude: locationsCenter.lat / locations.length,
         zoom: 10,
       }}
-      style={{ width: 600, height: 400 }}
+      style={{ maxWidth: 500, minWidth: "320px", width: "100%", height: 400 }}
       mapStyle="mapbox://styles/mapbox/streets-v11"
       mapboxAccessToken={process.env.NEXT_MAPBOX_ACCESS_TOKEN}
     >

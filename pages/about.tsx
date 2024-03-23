@@ -1,7 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 import { NextSeo } from "next-seo";
 import styles from "@/styles/About.module.css";
 import { MultiImg } from "@/components/MultiImg";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -34,7 +34,14 @@ export default function About() {
         </section>
 
         <div className={styles["img-wrapper"]}>
-          <img src="imgs/about/oven.png" alt="oven illustration" />
+          <Image
+            src="/imgs/about/oven.png"
+            alt="oven illustration"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
+          />
         </div>
 
         <p className={styles["p"]}>
@@ -52,7 +59,14 @@ export default function About() {
         </p>
 
         <div className={styles["img-wrapper"]}>
-          <img src="imgs/about/flour.png" alt="flour illustration" />
+          <Image
+            src="/imgs/about/flour.png"
+            alt="flour illustration"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
+          />
         </div>
 
         <p className={styles["p"]}>

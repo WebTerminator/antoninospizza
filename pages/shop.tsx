@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import styles from "@/styles/Shop.module.css";
 import { getProducts } from "../utils/shopify";
 import { ProductCard } from "@/components/ProductCard";
@@ -8,9 +7,7 @@ import { Widget } from "@/components/Widget";
 function Shop(props: any) {
   return (
     <div
-      style={{
-        paddingBottom: "40px",
-      }}
+      className={styles["shop-wrapper"]}
     >
       <h2 className="h2">You can purchase our delicious products</h2>
       <p style={{ textAlign: "center" }}>

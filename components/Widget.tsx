@@ -1,11 +1,7 @@
 export const Widget = ({ source }: { source: "instagram" | "google" }) => {
   if (source === "instagram") {
     return (
-      <div
-        style={{
-          padding: "40px 0",
-        }}
-      >
+      <div>
         <h3 style={{ textAlign: "center" }}>Instagram</h3>
         <script
           src="https://static.elfsight.com/platform/platform.js"
@@ -22,11 +18,7 @@ export const Widget = ({ source }: { source: "instagram" | "google" }) => {
 
   if (source === "google") {
     return (
-      <div
-        style={{
-          padding: "40px 0",
-        }}
-      >
+      <div>
         <div className="widget-google">
           <h3>Customer testimonials</h3>
           <p>

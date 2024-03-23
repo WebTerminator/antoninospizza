@@ -1,5 +1,6 @@
 import styles from "@/styles/Shop.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 export const ProductCard = ({
   featuredImage,
@@ -17,7 +18,14 @@ export const ProductCard = ({
           marginBottom: "20px",
         }}
       >
-        <img src={featuredImage?.url} alt="pizza" />
+        <Image
+          src={featuredImage?.url}
+          alt="pizza"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: "100%", height: "auto" }}
+        />
       </div>
       <p
         style={{

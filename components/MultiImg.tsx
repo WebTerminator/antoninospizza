@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import styles from "@/styles/MultiImg.module.css";
+import { Img } from "@/components/Img";
 
 interface MultiImgProps {
   mainImg: {
@@ -26,13 +26,13 @@ export const MultiImg = ({
   <>
     <div className={styles["section"]}>
       <div className={styles["header-tl"]}>
-        <img src={`imgs/${topLeftImg.src}.png`} alt={topLeftImg.alt} />
+        <Img url={`/imgs/${topLeftImg.src}.png`} alt={topLeftImg.alt} />
       </div>
 
-      <img src={`imgs/${mainImg.src}.png`} alt={mainImg.alt} />
+      <Img url={`/imgs/${mainImg.src}.png`} alt={mainImg.alt} />
 
       <div className={styles["header-br"]}>
-        <img src={`imgs/${bottomRightImg.src}.png`} alt={bottomRightImg.alt} />
+        <Img url={`/imgs/${bottomRightImg.src}.png`} alt={bottomRightImg.alt} />
       </div>
     </div>
 

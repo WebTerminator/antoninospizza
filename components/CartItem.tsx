@@ -1,6 +1,7 @@
 import { QuantitySelector } from "./QuantitySelector";
 import { useCart } from "@/cart.context";
 import styles from "@/styles/Cart.module.css";
+import Image from "next/image";
 
 export const CartItem = ({ el }: any) => {
   const { handleUpdateExistingCartLines, handleRemoveCartLine } = useCart();
@@ -32,7 +33,15 @@ export const CartItem = ({ el }: any) => {
   return (
     <li className={styles["cart-item"]}>
       <div>
-        <img className={styles["item-img"]} src={el?.merchandise?.image?.url} />
+        <Image
+          className={styles["item-img"]}
+          src={el?.merchandise?.image?.url}
+          alt="cart-item-image"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: "100%", height: "auto" }}
+        />
         <div className={styles["cart-item-info-wrapper"]}>
           <p
             style={{

@@ -1,6 +1,7 @@
 import { NextSeo } from "next-seo";
 import { MultiImg } from "@/components/MultiImg";
 import { MapWithInfo } from "@/components/MapWithInfo";
+import { Widget } from "@/components/Widget";
 
 export default function Contact() {
   return (
@@ -34,16 +35,8 @@ export default function Contact() {
 
       <MapWithInfo />
 
-      <div>
-        <script
-          src="https://static.elfsight.com/platform/platform.js"
-          data-use-service-core
-          defer
-        />
-        <div
-          className="elfsight-app-1d0d17b8-c7f1-49f5-8091-96f118c9fd64"
-          data-elfsight-app-lazy
-        />
+      <div style={{ marginBottom: "60px" }}>
+        <Widget source="instagram" />
       </div>
     </>
   );

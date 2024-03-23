@@ -1,11 +1,11 @@
 import { useState } from "react";
-
 import { useCart } from "@/cart.context";
 import { QuantitySelector } from "@/components/QuantitySelector";
 import { getProduct } from "@/utils/shopify";
 import { GetProductResponse } from "@/utils/queries";
 import styles from "@/styles/Handle.module.css";
 import { Instructions } from "@/components/Instructions";
+import { Img } from "@/components/Img";
 
 const ProductInfo = ({
   label,
@@ -68,7 +68,7 @@ function Product(props: GetProductResponse) {
     <div className={styles["container"]}>
       <div className={styles["inner"]}>
         <div className={styles["left"]}>
-          <img src={url} alt="Pizza illustration" />
+          <Img url={url} alt="Pizza illustration" />
         </div>
         <div className={styles["right"]}>
           <h2 style={{ marginBottom: "32px", textAlign: "left" }}>{title}</h2>
@@ -113,10 +113,9 @@ function Product(props: GetProductResponse) {
           />
         </div>
       </div>
-
-      <Instructions />
-
-      
+      <div style={{ marginBottom: "60px" }}>
+        <Instructions />
+      </div>
     </div>
   );
 }
