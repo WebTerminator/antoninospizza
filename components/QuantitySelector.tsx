@@ -18,11 +18,11 @@ export const QuantitySelector = ({
   >
     <button
       style={{
-        cursor: quantity === 1 ? "not-allowed" : "pointer",
+        cursor: quantity === 0 ? "not-allowed" : "pointer",
       }}
       className={"button-control"}
       onClick={() => handleQuantityChange({ action: "decrement" })}
-      disabled={quantity === 1}
+      disabled={quantity === 0}
     >
       <svg
         width="24px"

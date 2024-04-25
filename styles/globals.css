@@ -91,15 +91,10 @@ a {
   text-align: center;
 }
 
-.container {
-  max-width: 1440px;
+/* .container {
+  max-width: 1200px;
   margin: 0 auto;
-  /* padding: 0 24px;
-
-  @media (min-width: 1024px) {
-    padding: 0 120px;
-  } */
-}
+} */
 
 header + div {
   width: 100%;

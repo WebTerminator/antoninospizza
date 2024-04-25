@@ -33,15 +33,18 @@ export const CartItem = ({ el }: any) => {
   return (
     <li className={styles["cart-item"]}>
       <div>
-        <Image
-          className={styles["item-img"]}
-          src={el?.merchandise?.image?.url}
-          alt="cart-item-image"
-          width={0}
-          height={0}
-          sizes="100vw"
-          style={{ width: "100%", height: "auto" }}
-        />
+        <div style={{ flex: 1 }}>
+          <Image
+            className={styles["item-img"]}
+            src={el?.merchandise?.image?.url}
+            alt="cart-item-image"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
+          />
+        </div>
+
         <div className={styles["cart-item-info-wrapper"]}>
           <p
             style={{
@@ -58,7 +61,7 @@ export const CartItem = ({ el }: any) => {
               marginBottom: "20px",
             }}
           >
-            £{totalItemPrice}
+            Price: £{totalItemPrice}
           </p>
           <QuantitySelector
             handleQuantityChange={handleQuantityChange}
@@ -66,7 +69,10 @@ export const CartItem = ({ el }: any) => {
             size="small"
           />
         </div>
-        <button className="button-control">
+        <button
+          className="button-control"
+          onClick={() => handleRemoveCartLine({ lineIds: [el.id] })}
+        >
           <img src="icons/trash.svg" />
         </button>
       </div>

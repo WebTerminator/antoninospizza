@@ -1,5 +1,12 @@
 .container {
   min-height: calc(100vh - 220px);
+  padding: 0 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (min-width: 1024px) {
+    padding: 0;
+  }
 }
 
 .inner {

@@ -16,6 +16,8 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+
+  
 }
 
 .mobile-navigation-wrapper .button-icon {
@@ -32,6 +34,10 @@
   border: 0;
   width: 24px;
   height: 24px;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
 }
 
 @media (min-width: 1024px) {

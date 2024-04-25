@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
   justify-content: space-between;
-  align-self: center;
+  /* align-self: center; */
   align-items: center;
   border-radius: 6px;
   border: solid 1px #a2a3b1;

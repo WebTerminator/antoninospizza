@@ -35,7 +35,7 @@ export default function Contact() {
 
       <MapWithInfo />
 
-      <div style={{ marginBottom: "60px" }}>
+      <div style={{ maxWidth: "1200px", margin: "0 auto 60px" }}>
         <Widget source="instagram" />
       </div>
     </>

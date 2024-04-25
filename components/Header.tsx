@@ -34,22 +34,25 @@ export const Header = ({ toggleShoppingCart }: any) => {
         {isHomePath ? logo : <Link href="/">{logo}</Link>}
       </div>
 
-      <ul className={navigation}>
-        {navItems.map((item) => {
-          if (item.label === "facebook" || item.label === "instagram") {
-            return;
-          }
-          return (
-            <li key={item.label}>
-              <Link className={getNavItemStyle(item.link)} href={item.link}>
-                {item.label}
-              </Link>
-            </li>
-          );
-        })}
-        <li
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <ul className={navigation}>
+          {navItems.map((item) => {
+            if (item.label === "facebook" || item.label === "instagram") {
+              return;
+            }
+            return (
+              <li key={item.label}>
+                <Link className={getNavItemStyle(item.link)} href={item.link}>
+                  {item.label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+        <div
           style={{
             position: "relative",
+            margin: "0 20px",
           }}
         >
           <button
@@ -85,15 +88,14 @@ export const Header = ({ toggleShoppingCart }: any) => {
               {totalQuantity}
             </span>
           )}
-        </li>
-      </ul>
-
-      <button
-        className={MobileNavStyle["button-icon"]}
-        onClick={() => setIsMobileNavVisible(true)}
-      >
-        <img src="icons/hamburger.svg" alt="hamburger icon" />
-      </button>
+        </div>
+        <button
+          className={MobileNavStyle["button-icon"]}
+          onClick={() => setIsMobileNavVisible(true)}
+        >
+          <img src="icons/hamburger.svg" alt="hamburger icon" />
+        </button>
+      </div>
     </header>
   );
 };

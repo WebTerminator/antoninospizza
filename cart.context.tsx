@@ -68,7 +68,7 @@ export const CartProvider = ({ children }: any) => {
   const [totalQuantity, setTotalQuantity] = useState<number>(0);
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const [checkoutUrl, setCheckoutUrl] = useState("");
- 
+
   useEffect(() => {
     // get latest cart by id
     const cartId = sessionStorage.getItem("cartId");
@@ -76,9 +76,11 @@ export const CartProvider = ({ children }: any) => {
     const loadCart = async () => {
       if (cartId) {
         const { cart } = await retrieveCart(cartId);
+        console.log("cart: ", cart);
         setTotalQuantity(cart?.totalQuantity);
         setTotalPrice(cart?.estimatedCost.totalAmount.amount);
         const items = cart?.lines.nodes;
+        console.log("items: ", items);
         setCartItems(items);
       }
     };
