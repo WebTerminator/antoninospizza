@@ -11,7 +11,8 @@ export const Cart = ({
 }) => {
   const { items } = useCart();
 
-  const cartItemsTotal = items.reduce((acc, item) => acc + item.quantity, 0);
+  const cartItemsTotal =
+    items?.reduce((acc, item) => acc + item.quantity, 0) || 0;
 
   return (
     <div
