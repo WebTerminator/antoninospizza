@@ -52,7 +52,7 @@ export const Header = ({ toggleShoppingCart }: any) => {
         <div
           style={{
             position: "relative",
-            margin: "0 20px",
+            margin: "0 10px",
           }}
         >
           <button

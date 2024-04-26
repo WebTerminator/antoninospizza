@@ -144,6 +144,9 @@ export async function removeCartLine({
                   image {
                     url
                   }
+                  product {
+                    title
+                  }
                 }
               }
             }

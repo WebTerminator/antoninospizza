@@ -4,6 +4,8 @@ import styles from "@/styles/Cart.module.css";
 
 export const CartItems = () => {
   const { items, checkoutUrl, totalPrice } = useCart();
+
+  console.log(items);
   return (
     <ul className={styles["ul-wrapper"]}>
       {items?.map((el) => (

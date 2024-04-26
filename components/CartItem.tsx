@@ -4,7 +4,8 @@ import styles from "@/styles/Cart.module.css";
 import Image from "next/image";
 
 export const CartItem = ({ el }: any) => {
-  const { handleUpdateExistingCartLines, handleRemoveCartLine } = useCart();
+  const { handleUpdateExistingCartLines, handleRemoveCartLine, totalPrice } =
+    useCart();
 
   const handleQuantityChange = ({
     action,
@@ -27,8 +28,6 @@ export const CartItem = ({ el }: any) => {
         });
     }
   };
-
-  const totalItemPrice = el?.merchandise?.price?.amount * el.quantity;
 
   return (
     <li className={styles["cart-item"]}>
@@ -61,7 +60,7 @@ export const CartItem = ({ el }: any) => {
               marginBottom: "20px",
             }}
           >
-            Price: £{totalItemPrice}
+            Price: £{totalPrice}
           </p>
           <QuantitySelector
             handleQuantityChange={handleQuantityChange}
