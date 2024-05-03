@@ -10,8 +10,13 @@ export const navItems = [
   { label: "Home", link: "/" },
   { label: "About us", link: "/about" },
   { label: "Menu", link: "/menu" },
+  {
+    label: "Shop",
+    link: "/shop",
+  },
   { label: "Events", link: "/events" },
   { label: "Contact us", link: "/contact" },
+
   ...sociaLinks,
 ];
 
@@ -190,4 +195,3 @@ export type FormValues = {
   servingTime: string;
   additionalInfo?: string;
 };
-

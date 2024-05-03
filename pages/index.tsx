@@ -1,6 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
 import { NextSeo } from "next-seo";
 import styles from "@/styles/Home.module.css";
+import { getProducts } from "../utils/shopify";
+import { Widget } from "@/components/Widget";
+import { MapWithInfo } from "@/components/MapWithInfo";
+import { Img } from "@/components/Img";
 
 export default function Home() {
   const { section } = styles as any;
@@ -25,23 +28,25 @@ export default function Home() {
           ],
         }}
       />
-      <div>
+      <div className={styles["home-inner"]}>
         <section className={section}>
           <div>
             <div className={styles["large-text-wrapper"]}>
-              <h2>Handcrafted pizzas made with Love</h2>
+              <h2 style={{ textAlign: "left" }}>
+                Handcrafted pizzas made with Love
+              </h2>
               <p>Authentic Napoletan pizza with our handmade pizza dough</p>
             </div>
           </div>
 
           <div>
-            <img src="imgs/Home-pizza.png" alt="Pizza illustration" />
+            <Img url="/imgs/Home-pizza.png" alt="Pizza illustration" />
           </div>
         </section>
 
         <section className={styles["section-reverse"]}>
           <div className={styles["small-img-left"]}>
-            <img src="imgs/Home-ingredients.png" alt="Pizza illustration" />
+            <Img url="/imgs/Home-ingredients.png" alt="Pizza illustration" />
           </div>
 
           <div>
@@ -69,13 +74,13 @@ export default function Home() {
           </div>
 
           <div className={styles["small-img-right"]}>
-            <img src="imgs/Home-flour.png" alt="Pizza illustration" />
+            <Img url="/imgs/Home-flour.png" alt="Pizza illustration" />
           </div>
         </section>
 
         <section className={styles["section-reverse"]}>
           <div className={styles["small-img-left"]}>
-            <img src="imgs/Home-ape.png" alt="Pizza illustration" />
+            <Img url="/imgs/Home-ape.png" alt="Pizza illustration" />
           </div>
 
           <div>
@@ -110,7 +115,21 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <MapWithInfo />
+
+        <div style={{ marginBottom: "60px" }}>
+          <Widget source="instagram" />
+        </div>
       </div>
     </>
   );
 }
+
+Home.getInitialProps = async function () {
+  let data = await getProducts();
+
+  return {
+    props: data,
+  };
+};

@@ -12,12 +12,21 @@
   flex-direction: column-reverse;
 }
 
+.home-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  @media (min-width: 1024px) {
+    padding: 0;
+  }
+}
+
 @media (min-width: 1024px) {
   .section {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 120px;
   }
 
   .section-reverse {

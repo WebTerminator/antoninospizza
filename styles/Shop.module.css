@@ -1,0 +1,83 @@
+.product-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0 40px 50px 40px;
+
+  @media (min-width: 1024px) {
+    margin: 0 70px 0 70px;
+  }
+}
+
+.product-wrapper button {
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.product-wrapper img {
+  width: 100%;
+  max-width: 220px;
+}
+
+.product-wrapper div {
+  align-self: center;
+}
+
+.product-wrapper button {
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    width: auto;
+  }
+}
+
+.shop {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    margin-bottom: 120px;
+  }
+}
+
+.shop-wrapper {
+  padding: 0 24px 68px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cooking-info {
+  padding: 0;
+  text-align: center;
+
+  @media (min-width: 1024px) {
+    padding: 0 10rem;
+  }
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+}
+
+.instructions > div > div {
+  margin-bottom: 2rem;
+}
+
+.instructions > div {
+  text-align: center;
+
+  padding: 1rem;
+
+  /* @media (min-width: 1024px) {
+      padding: 2rem;
+    } */
+}

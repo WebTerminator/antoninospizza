@@ -9,19 +9,22 @@ import NavItemsStyle from "@/styles/NavItems.module.css";
 import { navItems } from "@/shared/";
 import { MobileNav } from "@/components/MobileNav";
 import MobileNavStyle from "@/styles/MobileNav.module.css";
+import { useCart } from "@/cart.context";
 
-export const Header = () => {
+export const Header = ({ toggleShoppingCart }: any) => {
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
   const router = useRouter();
-  const { header, navigation } = styles;
+  const { header, navigation, logoStyle } = styles;
   const isHomePath = router.pathname === "/";
+  const { totalQuantity } = useCart();
+  const isCartEmpty = totalQuantity === 0;
 
   const getNavItemStyle = (link: string) =>
     classNames(NavItemsStyle["nav-item"], {
       [NavItemsStyle["itemActive"]]: router.pathname === link,
     });
 
-  const logo = <img src="Logo.svg" alt="Logo" />;
+  const logo = <img className={logoStyle} src="Logo.svg" alt="Logo" />;
 
   return (
     <header className={header}>
@@ -31,38 +34,68 @@ export const Header = () => {
         {isHomePath ? logo : <Link href="/">{logo}</Link>}
       </div>
 
-      <ul className={navigation}>
-        {navItems.map((item) => {
-          if (item.label === "facebook" || item.label === "instagram") {
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <ul className={navigation}>
+          {navItems.map((item) => {
+            if (item.label === "facebook" || item.label === "instagram") {
+              return;
+            }
             return (
-              <li className="social" key={item.label}>
-                <Link target="_blank" href={item.link}>
-                  <img
-                    width="32"
-                    height="32"
-                    src={`icons/${item.label}.svg`}
-                    alt={`${item.label} account`}
-                  />
+              <li key={item.label}>
+                <Link className={getNavItemStyle(item.link)} href={item.link}>
+                  {item.label}
                 </Link>
               </li>
             );
-          }
-          return (
-            <li key={item.label}>
-              <Link className={getNavItemStyle(item.link)} href={item.link}>
-                {item.label}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-
-      <button
-        className={MobileNavStyle["button-icon"]}
-        onClick={() => setIsMobileNavVisible(true)}
-      >
-        <img src="icons/hamburger.svg" alt="hamburger icon" />
-      </button>
+          })}
+        </ul>
+        <div
+          style={{
+            position: "relative",
+            margin: "0 10px",
+          }}
+        >
+          <button
+            style={{
+              appearance: "none",
+              backgroundColor: "transparent",
+              border: "none",
+              cursor: "pointer",
+            }}
+            onClick={toggleShoppingCart}
+          >
+            <img
+              style={{
+                width: "28px",
+              }}
+              src="icons/shopping-cart.svg"
+              alt="shopping cart"
+            />
+          </button>
+          {!isCartEmpty && (
+            <span
+              style={{
+                position: "absolute",
+                top: "-10px",
+                right: "-10px",
+                backgroundColor: "#ec615c",
+                borderRadius: "50%",
+                padding: "2px 6px",
+                color: "white",
+                fontSize: "12px",
+              }}
+            >
+              {totalQuantity}
+            </span>
+          )}
+        </div>
+        <button
+          className={MobileNavStyle["button-icon"]}
+          onClick={() => setIsMobileNavVisible(true)}
+        >
+          <img src="icons/hamburger.svg" alt="hamburger icon" />
+        </button>
+      </div>
     </header>
   );
 };

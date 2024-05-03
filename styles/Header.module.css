@@ -2,12 +2,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 0;
-  margin-bottom: 20px;
+  padding: 18px 24px;
+  max-width: 1440px;
+  margin: 0 auto 20px;
+
+  @media (min-width: 1024px) {
+    padding: 18px 0;
+  }
 }
 
 .header ul {
   margin: 0;
+}
+
+.logoStyle {
+  max-width: 210px;
 }
 
 .navigation {

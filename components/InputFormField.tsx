@@ -8,7 +8,7 @@ interface FormFieldProps {
   register: any;
 }
 
-export const InputFormField = (props: FormFieldProps) => {
+export const InputFormField = (props: FormFieldProps): React.ReactElement => {
   const { name, id, label, min, type = "text", register } = props;
   const inputProps = {
     id,
