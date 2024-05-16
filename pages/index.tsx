@@ -78,44 +78,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles["section-reverse"]}>
-          <div className={styles["small-img-left"]}>
-            <Img url="/imgs/Home-ape.png" alt="Pizza illustration" />
-          </div>
-
-          <div>
-            <div className={styles["small-text-right"]}>
-              <h3>Bring the pizzeria to you with our ape car event</h3>
-              <p>
-                Experience fresh, hot pizza anywhere with our mobile pizzeria!
-              </p>
-
-              <ul>
-                <li>
-                  <p>Authentic Italian wood-fired pizza made fresh on-site</p>
-                </li>
-                <li>
-                  <p>
-                    Our signature pizza dough, fresh toppings, and homemade
-                    sauce
-                  </p>
-                </li>
-                <li>
-                  <p>A fun, unique and memorable experience for any occasion</p>
-                </li>
-                <li>
-                  <p>
-                    Perfect for parties, corporate events, weddings, and more
-                  </p>
-                </li>
-              </ul>
-              <a className="button" href="mailto:a.santorufo@icloud.com">
-                Book your event today!
-              </a>
-            </div>
-          </div>
-        </section>
-
         <MapWithInfo />
 
         <div style={{ marginBottom: "60px" }}>
