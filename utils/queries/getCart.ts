@@ -1,28 +1,36 @@
 import { gql } from "graphql-request";
 
-export type GetCartResponse = {
-  productByHandle: {
+export type NodeType = {
+  id: string;
+  quantity: number;
+  merchandise: {
     id: string;
-    title: string;
-    description: string;
-    featuredImage: {
+    product: {
+      title: string;
+    };
+    price: {
+      amount: number;
+      currencyCode: string;
+    };
+    image: {
       url: string;
     };
-    ingredients: {
-      value: string;
+  };
+};
+
+export type GetCartResponse = {
+  cart: {
+    id: string;
+    createdAt: string;
+    updatedAt: string;
+    totalQuantity: number;
+    lines: {
+      nodes: NodeType[];
     };
-    allergens: {
-      value: string;
-    };
-    variants: {
-      nodes: {
-        price: {
-          amount: string;
-          currencyCode: string;
-        };
-        weight: number;
-        id: string;
-      }[];
+    estimatedCost: {
+      totalAmount: {
+        amount: number;
+      };
     };
   };
 };
