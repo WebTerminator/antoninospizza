@@ -4,6 +4,8 @@ import {
   getSingleProductDetails,
   getAllProductsQuery,
   GetProductsResponse,
+  getCart,
+  GetCartResponse,
 } from "./queries";
 
 const storefrontAccessToken = process.env.NEXT_SHOPIFY_STOREFRONT_ACCESSTOKEN;
@@ -243,48 +245,14 @@ export async function updateCartLines2({
 
 // retrieves cart
 export async function retrieveCart(cartId: string) {
-  const cartQuery = gql`
-    query cartQuery($cartId: ID!) {
-      cart(id: $cartId) {
-        id
-        createdAt
-        updatedAt
-        totalQuantity
-        lines(first: 10) {
-          nodes {
-            id
-            quantity
-            merchandise {
-              ... on ProductVariant {
-                id
-                product {
-                  title
-                }
-                price {
-                  amount
-                  currencyCode
-                }
-                image {
-                  url
-                }
-              }
-            }
-          }
-        }
-        estimatedCost {
-          totalAmount {
-            amount
-          }
-        }
-      }
-    }
-  `;
-
   const variables = {
     cartId,
   };
   try {
-    const data: any = await graphQLClient.request(cartQuery, variables);
+    const data: GetCartResponse = await graphQLClient.request(
+      getCart,
+      variables
+    );
 
     return data;
   } catch (error: any) {
