@@ -86,7 +86,6 @@ function Product(props: GetProductResponse) {
           <div className={styles["actions-wrapper"]}>
             <QuantitySelector
               handleQuantityChange={handleQuantityChange}
-              // setQuantity={setQuantity}
               quantity={quantity}
             />
 
