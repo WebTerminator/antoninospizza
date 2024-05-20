@@ -1,4 +1,4 @@
-import { gql, GraphQLClient } from "graphql-request";
+import { gql } from "graphql-request";
 
 export type GetProductResponse = {
   productByHandle: {

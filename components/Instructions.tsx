@@ -4,7 +4,7 @@ import { Img } from "./Img";
 export const Instructions = () => (
   <>
     <div className={styles["cooking-info"]}>
-      <h3>How to cook your pizza?</h3>
+      <h3>How to cook</h3>
       <p>
         Remember to always follow the specific cooking instructions provided
         with your pizza for the best results. With these simple steps,
@@ -18,7 +18,8 @@ export const Instructions = () => (
         </div>
         <h3>Step 1</h3>
         <p>
-          Take off the packaging and unveil the potential for culinary magic.
+          Pre-heat the oven to 200 C. Take off the packaging and unveil the
+          culinary magic.
         </p>
       </div>
       <div>
@@ -26,18 +27,14 @@ export const Instructions = () => (
           <Img url="/imgs/shop/step-2.png" alt="" />
         </div>
         <h3>Step 2</h3>
-        <p>
-          Take off the packaging and unveil the potential for culinary magic.
-        </p>
+        <p>Season your pizza with your favourite pizza toppings.</p>
       </div>
       <div>
         <div>
           <Img url="/imgs/shop/step-3.png" alt="" />
         </div>
         <h3>Step 3</h3>
-        <p>
-          Take off the packaging and unveil the potential for culinary magic.
-        </p>
+        <p>Bake in the oven for 8-10 minutes and ENJOY!</p>
       </div>
     </div>
   </>

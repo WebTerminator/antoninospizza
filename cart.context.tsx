@@ -9,10 +9,7 @@ import {
 } from "./utils/shopify";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-type ItemType = {
-  name: string;
-};
+import { NodeType } from "./utils/queries";
 
 interface CartContextProps {
   items: any[];
@@ -64,7 +61,7 @@ const CartContext = createContext(defaultState);
 export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }: any) => {
-  const [items, setCartItems] = useState<ItemType[]>([]);
+  const [items, setCartItems] = useState<NodeType[]>([]);
   const [totalQuantity, setTotalQuantity] = useState<number>(0);
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const [checkoutUrl, setCheckoutUrl] = useState("");

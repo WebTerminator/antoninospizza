@@ -68,6 +68,10 @@
   }
 }
 
+.instructions > div {
+  flex: 1;
+}
+
 .instructions > div > div {
   margin-bottom: 2rem;
 }
