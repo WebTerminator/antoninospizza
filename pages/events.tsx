@@ -25,42 +25,23 @@ export default function Events() {
 
           <div>
             <div className={styles["small-text-right"]}>
-              <h3>Bring the pizzeria to you with our ape car event</h3>
+              <h3>Bring your mobile pizzeria to you</h3>
               <p>
-                Experience fresh, hot pizza anywhere with our mobile pizzeria!
+                Are you hosting a birthday party, wedding, work gathering or any
+                other event?
               </p>
 
-              <ul>
-                <li>
-                  <p>Authentic Italian wood-fired pizza made fresh on-site</p>
-                </li>
-                <li>
-                  <p>
-                    Our signature pizza dough, fresh toppings, and homemade
-                    sauce
-                  </p>
-                </li>
-                <li>
-                  <p>A fun, unique and memorable experience for any occasion</p>
-                </li>
-                <li>
-                  <p>
-                    Perfect for parties, corporate events, weddings, and more
-                  </p>
-                </li>
-              </ul>
-              {/* <a className="button" href="mailto:a.santorufo@icloud.com">
-                Book your event today!
-              </a> */}
+              <p>
+                Antonino’s Pizza will bring to you Neapolitan style Pizza (and
+                people) on board of a 1988 vintage Piaggio Ape Car making your
+                special occasion unforgettable.
+              </p>
             </div>
           </div>
         </section>
       </div>
 
       <div className="container-small">
-        {/* <h2 className="h2">Events</h2> */}
-        {/* <p>Let us know if you have any queries regarding a private event.</p> */}
-
         <EventsForm />
       </div>
     </>
