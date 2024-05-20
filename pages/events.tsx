@@ -10,6 +10,7 @@ export default function Events() {
       <NextSeo
         title="Events - Antonino's Pizza"
         canonical="https://www.antoninospizza.co.uk/events"
+        description="Are you hosting a birthday party, wedding, work gathering or any other event? Antonino’s Pizza will bring to you Neapolitan style Pizza (and people) on board of a 1988 vintage Piaggio Ape Car making your special occasion unforgettable."
       />
       <div style={{ display: "flex", justifyContent: "center" }}>
         <section className={styles["section-reverse"]}>
