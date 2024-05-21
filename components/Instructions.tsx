@@ -18,7 +18,7 @@ export const Instructions = () => (
         </div>
         <h3>Step 1</h3>
         <p>
-          Pre-heat the oven to 200 C. Take off the packaging and unveil the
+          Pre-heat the oven to 250 C. Take off the packaging and unveil the
           culinary magic.
         </p>
       </div>
