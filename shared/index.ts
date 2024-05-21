@@ -9,7 +9,7 @@ export const sociaLinks = [
 export const navItems = [
   { label: "Home", link: "/" },
   { label: "About us", link: "/about" },
-  { label: "Menu", link: "/menu" },
+  { label: "Pizzeria", link: "/pizzeria" },
   {
     label: "Shop",
     link: "/shop",
