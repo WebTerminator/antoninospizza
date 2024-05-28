@@ -11,7 +11,7 @@ export default function About() {
         canonical="https://www.antoninospizza.co.uk/about"
       />
       <div className="container-small">
-        <h2 className="h2">About page</h2>
+        <h2 className="h2">About us</h2>
 
         <section className={styles["section"]}>
           <MultiImg
@@ -45,17 +45,15 @@ export default function About() {
         </div>
 
         <p className={styles["p"]}>
-          At Antonino’s, we are passionate about bringing the authentic taste of
-          Naples to Sutton, UK. Our restaurant is inspired by the vibrant
-          culinary traditions of Naples, Italy, and we take great pride in using
-          only the finest and freshest ingredients in all of our dishes.
+          Antonino’s Pizza brings the authentic taste of Neapolitan sourdough
+          pizza to London with his unique slow fermentation dough inspired by
+          the ancient traditions, influenced by our Mamma’s and Nonna’s recipe.
         </p>
         <p className={styles["p"]}>
-          Our story began with a love for Napolitan cuisine and a desire to
-          share it with the world. After years of perfecting our pizza-making
-          techniques and sourcing the best ingredients, we opened our doors in
-          Sutton, with the goal of creating an unforgettable dining experience
-          for our customers.
+          Antonino’s pizza adventure started in 2018 when Antonino’s father,
+          Antonio decided to do a complete make over of a 1988 Ape Car Piaggio,
+          that belonged to Zi’ Pepp (uncle Peppe), he built on it a powerful
+          pizza oven and shipped it over to London.
         </p>
 
         <div className={styles["img-wrapper"]}>
@@ -70,19 +68,37 @@ export default function About() {
         </div>
 
         <p className={styles["p"]}>
-          Our menu features a variety of traditional and gourmet pizzas, all
-          made with San Marzano tomatoes, fresh mozzarella, and hand-stretched
-          dough that is cooked to perfection in our wood-fired oven. We also
-          offer a selection of salads, antipasti, and desserts.
+          The founders of Antonino’s Pizza, Antonino and Tiziana met in London
+          where they started their love-pizza story and made the vintage Ape Car
+          a great addition to any event; the pizza that they serve matches how
+          good the Ape Car looks.
         </p>
 
         <p className={styles["p"]}>
-          But our commitment to quality goes beyond our ingredients. We believe
-          that a great dining experience is about more than just the food;
-          it&apos;s about the atmosphere, the service, and the overall
-          experience. That&apos;s why we strive to create a warm and inviting
-          atmosphere for our guests, with friendly and knowledgeable staff who
-          are dedicated to making your visit a memorable one.
+          Antonino and Tiziana opened the door of their first Pizzeria in
+          Sutton, after years of perfecting their sourdough experience and
+          sourcing the best ingredients.
+        </p>
+
+        <p className={styles["p"]}>
+          Inspired by the vibrant culinary traditions of Naples, they take great
+          pride in using only the finest and freshest ingredients in all of
+          their dishes.
+        </p>
+
+        <p className={styles["p"]}>
+          Their story began with love for Neapolitan cuisine and a desire to
+          share it with the world, from a beautiful van or at their cozy
+          Pizzeria, they strive to create a warm and inviting atmosphere for the
+          guests, with friendly and knowledgeable staff who are dedicated to
+          making your visit a memorable one.
+        </p>
+
+        <p className={styles["p"]}>
+          The menu features a variety of traditional and gourmet pizzas, made
+          with San Marzano tomatoes, fresh fior di latte mozzarella, and
+          hand-stretched dough, cooked to perfection. also offers a selection of
+          salads, antipasti, and desserts.
         </p>
       </div>
     </>
