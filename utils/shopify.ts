@@ -6,6 +6,9 @@ import {
   GetProductsResponse,
   getCart,
   GetCartResponse,
+  CART_COMMON_FIELDS,
+  cartLinesAdd,
+  cartLinesUpdate,
 } from "./queries";
 
 const storefrontAccessToken = process.env.NEXT_SHOPIFY_STOREFRONT_ACCESSTOKEN;
@@ -16,68 +19,23 @@ const graphQLClient = new GraphQLClient(endpoint as string, {
   } as any,
 });
 
-export const CART_COMMON_FIELDS = gql`
-  fragment cartProducts on Cart {
-    id
-    totalQuantity
-    estimatedCost {
-      totalAmount {
-        amount
-      }
-    }
-    lines(first: 10) {
-      nodes {
-        id
-        quantity
-        merchandise {
-          ... on ProductVariant {
-            id
-            price {
-              amount
-              currencyCode
-            }
-            product {
-              title
-            }
-            title
-            image {
-              url
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
-export async function getProducts() {
+const getData = async (query: string, variables?: Record<string, any>) => {
   try {
-    const data: GetProductsResponse = await graphQLClient.request(
-      getAllProductsQuery
-    );
-
+    const data = await graphQLClient.request(query, variables);
     return data;
   } catch (error) {
     throw new Error(error as any);
   }
-}
+};
 
-export async function getProduct({ handle }: { handle: string }) {
-  const variables = {
-    handle,
-  };
+export const getProducts = () =>
+  getData(getAllProductsQuery) as Promise<GetProductsResponse>;
 
-  try {
-    const data: GetProductResponse = await graphQLClient.request(
-      getSingleProductDetails,
-      variables
-    );
+export const getProduct = ({ handle }: { handle: string }) =>
+  getData(getSingleProductDetails, { handle }) as Promise<GetProductResponse>;
 
-    return data;
-  } catch (error) {
-    throw new Error(error as any);
-  }
-}
+export const retrieveCart = async (cartId: string) =>
+  getData(getCart, { cartId }) as Promise<GetCartResponse>;
 
 // create a cart for the first time and adds items to it
 export async function createAndAddToCart({
@@ -168,8 +126,7 @@ export async function removeCartLine({
   }
 }
 
-// updates existing cart
-export async function updateCartLines({
+export const updateCartLines = ({
   cartId,
   itemId,
   quantity,
@@ -177,19 +134,8 @@ export async function updateCartLines({
   cartId: string;
   itemId: string;
   quantity: string;
-}) {
-  const updateCartMutation = gql`
-    ${CART_COMMON_FIELDS}
-    mutation cartLinesAdd($cartId: ID!, $lines: [CartLineInput!]!) {
-      cartLinesAdd(cartId: $cartId, lines: $lines) {
-        cart {
-          ...cartProducts
-        }
-      }
-    }
-  `;
-
-  const variables = {
+}) =>
+  getData(cartLinesAdd, {
     cartId,
     lines: [
       {
@@ -197,16 +143,9 @@ export async function updateCartLines({
         merchandiseId: itemId,
       },
     ],
-  };
+  });
 
-  try {
-    return await graphQLClient.request(updateCartMutation, variables);
-  } catch (error: any) {
-    throw new Error(error);
-  }
-}
-
-export async function updateCartLines2({
+export const updateCartLines2 = ({
   cartId,
   quantity,
   mainId,
@@ -214,19 +153,8 @@ export async function updateCartLines2({
   cartId: string;
   quantity: string;
   mainId: string;
-}) {
-  const updateCartMutation = gql`
-    ${CART_COMMON_FIELDS}
-    mutation cartLinesUpdate($cartId: ID!, $lines: [CartLineUpdateInput!]!) {
-      cartLinesUpdate(cartId: $cartId, lines: $lines) {
-        cart {
-          ...cartProducts
-        }
-      }
-    }
-  `;
-
-  const variables = {
+}) =>
+  getData(cartLinesUpdate, {
     cartId,
     lines: [
       {
@@ -234,31 +162,7 @@ export async function updateCartLines2({
         id: mainId,
       },
     ],
-  };
-
-  try {
-    return await graphQLClient.request(updateCartMutation, variables);
-  } catch (error: any) {
-    throw new Error(error);
-  }
-}
-
-// retrieves cart
-export async function retrieveCart(cartId: string) {
-  const variables = {
-    cartId,
-  };
-  try {
-    const data: GetCartResponse = await graphQLClient.request(
-      getCart,
-      variables
-    );
-
-    return data;
-  } catch (error: any) {
-    throw new Error(error);
-  }
-}
+  });
 
 //get checkout url
 export const getCheckoutUrl = async (cartId: string) => {
