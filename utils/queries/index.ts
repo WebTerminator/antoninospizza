@@ -1,6 +1,9 @@
 import { getSingleProductDetails, GetProductResponse } from "./getProduct";
 import { getAllProductsQuery, GetProductsResponse } from "./getProducts";
 import { getCart, GetCartResponse, NodeType } from "./getCart";
+import { CART_COMMON_FIELDS } from "./common";
+import { cartLinesAdd } from "./cartLinesAdd";
+import { cartLinesUpdate } from "./cartLinesUpdate";
 
 export type {
   GetProductResponse,
@@ -8,4 +11,11 @@ export type {
   GetCartResponse,
   NodeType,
 };
-export { getSingleProductDetails, getAllProductsQuery, getCart };
+export {
+  getSingleProductDetails,
+  getAllProductsQuery,
+  getCart,
+  CART_COMMON_FIELDS,
+  cartLinesAdd,
+  cartLinesUpdate,
+};
