@@ -32,23 +32,7 @@ export default function About() {
             ]}
           />
         </section>
-
-        <div className={styles["img-wrapper"]}>
-          <Image
-            src="/imgs/about/oven.png"
-            alt="oven illustration"
-            width={0}
-            height={0}
-            sizes="100vw"
-            style={{ width: "100%", height: "auto" }}
-          />
-        </div>
-
-        <p className={styles["p"]}>
-          Antonino’s Pizza brings the authentic taste of Neapolitan sourdough
-          pizza to London with his unique slow fermentation dough inspired by
-          the ancient traditions, influenced by our Mamma’s and Nonna’s recipe.
-        </p>
+      
         <p className={styles["p"]}>
           Antonino’s pizza adventure started in 2018 when Antonino’s father,
           Antonio decided to do a complete make over of a 1988 Ape Car Piaggio,
