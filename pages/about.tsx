@@ -1,7 +1,7 @@
 import { NextSeo } from "next-seo";
 import styles from "@/styles/About.module.css";
-import { MultiImg } from "@/components/MultiImg";
 import Image from "next/image";
+import { Carousel } from "../components/Carousel";
 
 export default function About() {
   return (
@@ -13,23 +13,18 @@ export default function About() {
       <div className="container-small">
         <h2 className="h2">About us</h2>
 
-        <section className={styles["section"]}>
-          <MultiImg
-            topLeftImg={{
-              src: "about/header-tl",
-              alt: "tomato illustration",
-            }}
-            mainImg={{
-              src: "about/header",
-              alt: "ape car display",
-            }}
-            bottomRightImg={{
-              src: "about/header-br",
-              alt: "olives illustration",
-            }}
-            text={[""]}
-          />
-        </section>
+        <Carousel
+          images={[
+            {
+              url: "/imgs/about/car-2.jpg",
+              alt: "Antonino and Tiziana",
+            },
+            {
+              url: "/imgs/about/car-3.jpg",
+              alt: "Marghertia pizza",
+            },
+          ]}
+        />
 
         <p className={styles["p"]}>
           Antonino’s pizza adventure started in 2018 when Antonino’s father,
