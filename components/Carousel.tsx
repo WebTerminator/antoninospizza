@@ -14,6 +14,7 @@ export const Carousel = (props: {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
   };
 
   if (props.images.length === 0) return null;
