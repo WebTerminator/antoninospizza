@@ -32,12 +32,6 @@ export default function About() {
         </section>
 
         <p className={styles["p"]}>
-          Antonino’s Pizza brings the authentic taste of Neapolitan sourdough
-          pizza to London with his unique slow fermentation dough inspired by
-          the ancient traditions, influenced by our Mamma’s and Nonna’s recipe.
-        </p>
-
-        <p className={styles["p"]}>
           Antonino’s pizza adventure started in 2018 when Antonino’s father,
           Antonio decided to do a complete make over of a 1988 Ape Car Piaggio,
           that belonged to Zi’ Pepp (uncle Peppe), he built on it a powerful
