@@ -27,12 +27,16 @@ export default function About() {
               src: "about/header-br",
               alt: "olives illustration",
             }}
-            text={[
-              "Antonino’s Pizza bring you the authentic taste of Neapolitan sourdough pizza served from their beautiful 1988 vintage Piaggio. Their lovely van would be an amazing addition to almost any event and the pizza that they serve from it matches how good it looks.",
-            ]}
+            text={[""]}
           />
         </section>
-      
+
+        <p className={styles["p"]}>
+          Antonino’s Pizza brings the authentic taste of Neapolitan sourdough
+          pizza to London with his unique slow fermentation dough inspired by
+          the ancient traditions, influenced by our Mamma’s and Nonna’s recipe.
+        </p>
+
         <p className={styles["p"]}>
           Antonino’s pizza adventure started in 2018 when Antonino’s father,
           Antonio decided to do a complete make over of a 1988 Ape Car Piaggio,
