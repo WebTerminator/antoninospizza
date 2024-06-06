@@ -6,10 +6,8 @@ import { Widget } from "@/components/Widget";
 
 function Shop(props: any) {
   return (
-    <div
-      className={styles["shop-wrapper"]}
-    >
-      <h2 className="h2">You can purchase our delicious products</h2>
+    <div className={styles["shop-wrapper"]}>
+      <h2 className="h2">Antonino&apos;s Pizza Bases</h2>
       <p style={{ textAlign: "center" }}>
         We meticulously handcraft our products, paying close attention to every
         detail.
