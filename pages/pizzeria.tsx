@@ -56,8 +56,8 @@ export default function Menu() {
         <p>
           Our menu is crafted to showcase the best of Napolitan cuisine. From
           our classic Margherita to our creative gourmet pizzas, each dish is
-          carefully prepared and cooked to perfection in our wood-fired oven.
-          Here are some of our menu highlights:
+          carefully prepared and cooked to perfection. Here are some of our menu
+          highlights:
         </p>
       </div>
 
