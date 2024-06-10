@@ -14,6 +14,11 @@ export type GetProductResponse = {
     allergens: {
       value: string;
     };
+    technical_sheet: {
+      reference: {
+        url: string;
+      };
+    };
     variants: {
       nodes: {
         price: {
@@ -41,6 +46,13 @@ export const getSingleProductDetails = gql`
       }
       allergens: metafield(namespace: "custom", key: "allergens") {
         value
+      }
+      technical_sheet: metafield(namespace: "custom", key: "technical_sheet") {
+        reference {
+          ... on GenericFile {
+            url
+          }
+        }
       }
       variants(first: 1) {
         nodes {

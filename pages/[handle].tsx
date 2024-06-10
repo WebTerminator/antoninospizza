@@ -11,17 +11,29 @@ const ProductInfo = ({
   label,
   value,
   iconUrl,
+  href,
 }: {
   label: string;
-  value: string;
+  value?: string;
   iconUrl: string;
+  href?: string;
 }) => (
   <>
     <div style={{ display: "flex", alignItems: "center", gap: ".2rem" }}>
       <img style={{ width: "20px" }} src={iconUrl} />
-      <p style={{ fontSize: "14px", marginBottom: "0", fontWeight: "bold" }}>
-        {label}
-      </p>
+      {href ? (
+        <a
+          href={href}
+          target="_blank"
+          style={{ fontSize: "14px", marginBottom: "0", fontWeight: "bold" }}
+        >
+          {label}
+        </a>
+      ) : (
+        <p style={{ fontSize: "14px", marginBottom: "0", fontWeight: "bold" }}>
+          {label}
+        </p>
+      )}
     </div>
     <p style={{ fontSize: "14px" }}>{value}</p>
   </>
@@ -38,9 +50,10 @@ function Product(props: GetProductResponse) {
       ingredients,
       allergens,
       variants,
+      technical_sheet,
     },
   } = props;
-
+  console.log(technical_sheet);
   const handleQuantityChange = ({
     action,
   }: {
@@ -109,6 +122,12 @@ function Product(props: GetProductResponse) {
             label="Weight"
             value={`${variants.nodes[0].weight} gr`}
             iconUrl="icons/time.svg"
+          />
+
+          <ProductInfo
+            label="Technical sheet"
+            iconUrl="icons/link.svg"
+            href={technical_sheet.reference.url}
           />
         </div>
       </div>

@@ -9,6 +9,7 @@ import {
   CART_COMMON_FIELDS,
   cartLinesAdd,
   cartLinesUpdate,
+  getCheckoutUrlQuery,
 } from "./queries";
 
 const storefrontAccessToken = process.env.NEXT_SHOPIFY_STOREFRONT_ACCESSTOKEN;
@@ -165,23 +166,8 @@ export const updateCartLines2 = ({
   });
 
 //get checkout url
-export const getCheckoutUrl = async (cartId: string) => {
-  const getCheckoutUrlQuery = gql`
-    query checkoutURL($cartId: ID!) {
-      cart(id: $cartId) {
-        checkoutUrl
-      }
-    }
-  `;
-  const variables = {
-    cartId,
-  };
-  try {
-    return await graphQLClient.request(getCheckoutUrlQuery, variables);
-  } catch (error: any) {
-    throw new Error(error);
-  }
-};
+export const getCheckoutUrl = async (cartId: string) =>
+  getData(getCheckoutUrlQuery, { cartId });
 
 export const handleAddToCart = async ({
   quantity,
