@@ -19,6 +19,9 @@ export type GetProductResponse = {
         url: string;
       };
     };
+    dimensions: {
+      value: string;
+    };
     variants: {
       nodes: {
         price: {
@@ -45,6 +48,9 @@ export const getSingleProductDetails = gql`
         value
       }
       allergens: metafield(namespace: "custom", key: "allergens") {
+        value
+      }
+      dimensions: metafield(namespace: "custom", key: "dimensions") {
         value
       }
       technical_sheet: metafield(namespace: "custom", key: "technical_sheet") {

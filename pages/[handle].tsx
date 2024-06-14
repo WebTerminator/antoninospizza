@@ -50,10 +50,11 @@ function Product(props: GetProductResponse) {
       ingredients,
       allergens,
       variants,
+      dimensions,
       technical_sheet,
     },
   } = props;
-  console.log(technical_sheet);
+
   const handleQuantityChange = ({
     action,
   }: {
@@ -122,6 +123,12 @@ function Product(props: GetProductResponse) {
             label="Weight"
             value={`${variants.nodes[0].weight} gr`}
             iconUrl="icons/time.svg"
+          />
+
+          <ProductInfo
+            label="Dimensions"
+            value={dimensions.value}
+            iconUrl="icons/size.svg"
           />
 
           <ProductInfo
