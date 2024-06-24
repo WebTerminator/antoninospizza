@@ -5,6 +5,8 @@ import { Instructions } from "@/components/Instructions";
 import { Widget } from "@/components/Widget";
 
 function Shop(props: any) {
+  if (props.products.length === 0) return null;
+
   return (
     <div className={styles["shop-wrapper"]}>
       <h2 className="h2">Antonino&apos;s Pizza Bases</h2>
@@ -13,8 +15,8 @@ function Shop(props: any) {
         detail.
       </p>
       <div className={styles["shop"]}>
-        {props.products.edges.map(
-          ({ node: { title, featuredImage, id, variants, handle } }: any) => (
+        {props.products.edges?.map(
+          ({ node: { id, title, handle, featuredImage, variants } }: any) => (
             <ProductCard
               key={id}
               featuredImage={featuredImage}
