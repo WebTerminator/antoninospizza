@@ -49,21 +49,21 @@ const Info = () => (
     </p>
     <p style={{ marginBottom: "0" }}>
       <span className="bold">Tue - Thu: </span>
-      11AM - 6PM
+      12AM - 6PM
     </p>
     <p style={{ marginBottom: "0" }}>
       <span className="bold">Fri - Sat: </span>
-      11AM - 9PM
+      12AM - 9PM
     </p>
     <p>
       <span className="bold">Sun: </span>
-      11AM - 5PM
+      12AM - 5PM
     </p>
 
     <p className={styles["location-title"]}>Sloan Square</p>
     <p style={{ marginBottom: "0" }}>
       <span className="bold">Sat: </span>
-      10AM - 4PM
+      12AM - 4PM
     </p>
   </div>
 );
