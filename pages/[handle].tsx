@@ -109,33 +109,42 @@ function Product(props: GetProductResponse) {
           </div>
           <p>{description}</p>
 
-          <ProductInfo
-            label="Ingredients"
-            value={ingredients.value}
-            iconUrl="icons/bowl.svg"
-          />
-          <ProductInfo
-            label="Allergens"
-            value={allergens.value}
-            iconUrl="icons/boy.svg"
-          />
+          {ingredients?.value && (
+            <ProductInfo
+              label="Ingredients"
+              value={ingredients.value}
+              iconUrl="icons/bowl.svg"
+            />
+          )}
+
+          {allergens?.value && (
+            <ProductInfo
+              label="Allergens"
+              value={allergens.value}
+              iconUrl="icons/boy.svg"
+            />
+          )}
+
           <ProductInfo
             label="Weight"
             value={`${variants.nodes[0].weight} gr`}
             iconUrl="icons/time.svg"
           />
 
-          <ProductInfo
-            label="Dimensions"
-            value={dimensions.value}
-            iconUrl="icons/size.svg"
-          />
-
-          <ProductInfo
-            label="Technical sheet"
-            iconUrl="icons/link.svg"
-            href={technical_sheet.reference.url}
-          />
+          {dimensions?.value && (
+            <ProductInfo
+              label="Dimensions"
+              value={dimensions.value}
+              iconUrl="icons/size.svg"
+            />
+          )}
+          {technical_sheet?.reference.url && (
+            <ProductInfo
+              label="Technical sheet"
+              iconUrl="icons/link.svg"
+              href={technical_sheet.reference.url}
+            />
+          )}
         </div>
       </div>
       <div style={{ marginBottom: "60px" }}>
